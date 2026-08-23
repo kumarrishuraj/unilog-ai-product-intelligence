@@ -1,0 +1,4826 @@
+{
+  "$schema": "unilog.taxonomy.v1",
+  "provenance": "derived",
+  "note": "Leaf-node taxonomy with per-leaf attribute templates. The 'built_in_dishwashers' template is transcribed from the supplied labelled delivery-format rows, which emit ATTRIBUTE_LABEL n even when ATTRIBUTE_VALUE n is blank - proving the label sequence is a property of the CATEGORY, not of what was extracted. Remaining leaves cover the categories actually present in the supplied 1,000-row feed. This pack is replaced wholesale by Unicat_Lov_v1_0_Updated_With_Remarks.xlsx (classpath + attribute label + attribute values + normalized values) when that workbook is supplied; see backend/reference/registry.py.",
+  "render_tokens": {
+    "value": "the normalised attribute value",
+    "uom": "approved UOM abbreviation, omitted when absent",
+    "label": "the attribute label"
+  },
+  "leaf_nodes": [
+    {
+      "id": "built_in_dishwashers",
+      "dept": "Appliances",
+      "class": "Large Appliances",
+      "fine": "Dishwashers",
+      "classpath": "Appliances & Consumer Electronics>Kitchen Appliances>Built-In Dishwashers",
+      "product_name": "Dishwasher",
+      "unspsc": "52141505",
+      "strong_keywords": [
+        "dishwasher"
+      ],
+      "keywords": [
+        "dish washer"
+      ],
+      "exclude_keywords": [
+        "detergent",
+        "rinse aid",
+        "magnet"
+      ],
+      "short_desc_attributes": [
+        "Mounting Type",
+        "Number of Wash Cycles",
+        "Material",
+        "Color"
+      ],
+      "invoice_attributes": [
+        "Mounting Type",
+        "Number of Wash Cycles",
+        "Material",
+        "Color",
+        "Voltage Rating",
+        "Amperage Rating",
+        "Depth With Door Open",
+        "Sound Level"
+      ],
+      "attributes": [
+        {
+          "label": "Series",
+          "render": "{value}"
+        },
+        {
+          "label": "Model",
+          "render": "{value}"
+        },
+        {
+          "label": "Number of Wash Cycles",
+          "render": "{value} Wash Cycles",
+          "extract_patterns": [
+            "(\\d+)\\s*(?:-)?\\s*wash\\s*cycle",
+            "(\\d+)\\s*cycle"
+          ]
+        },
+        {
+          "label": "Voltage Rating",
+          "uom": "V",
+          "measurement_type": "Voltage",
+          "render": "{value} {uom}",
+          "extract_patterns": [
+            "(\\d{2,3})\\s*(?:v|volt|volts)\\b"
+          ]
+        },
+        {
+          "label": "Amperage Rating",
+          "uom": "A",
+          "measurement_type": "Amperage",
+          "render": "{value} {uom}",
+          "extract_patterns": [
+            "(\\d{1,3})\\s*(?:a|amp|amps)\\b"
+          ]
+        },
+        {
+          "label": "Mounting Type",
+          "render": "{value} Mounting",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Built-in",
+              "synonyms": [
+                "built in",
+                "builtin",
+                "bltln",
+                "undercounter",
+                "under counter"
+              ]
+            },
+            {
+              "value": "Leg",
+              "synonyms": [
+                "leg mount",
+                "legs"
+              ]
+            },
+            {
+              "value": "Portable",
+              "synonyms": [
+                "portable",
+                "freestanding",
+                "free standing"
+              ]
+            },
+            {
+              "value": "Drawer",
+              "synonyms": [
+                "drawer"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Plug Type",
+          "render": "{value} Plug"
+        },
+        {
+          "label": "Size",
+          "render": "{value}"
+        },
+        {
+          "label": "Depth With Door Open",
+          "uom": "in",
+          "measurement_type": "Length",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Minimum Height",
+          "uom": "in",
+          "measurement_type": "Length",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Maximum Height",
+          "uom": "in",
+          "measurement_type": "Length",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Sound Level",
+          "uom": "dBA",
+          "measurement_type": "Sound Level",
+          "render": "{value} {uom} {label}",
+          "filtering": true,
+          "extract_patterns": [
+            "(\\d{2})\\s*dba"
+          ]
+        },
+        {
+          "label": "Material",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Stainless Steel",
+              "synonyms": [
+                "ss",
+                "sst",
+                "stainless",
+                "s/s",
+                "stnls stl"
+              ]
+            },
+            {
+              "value": "Plastic",
+              "synonyms": [
+                "plastic",
+                "poly"
+              ]
+            },
+            {
+              "value": "Steel",
+              "synonyms": [
+                "steel"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Color",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Stainless Steel",
+              "synonyms": [
+                "ss",
+                "sst",
+                "stainless"
+              ]
+            },
+            {
+              "value": "Black",
+              "synonyms": [
+                "bk",
+                "blk",
+                "black"
+              ]
+            },
+            {
+              "value": "White",
+              "synonyms": [
+                "wh",
+                "wht",
+                "white"
+              ]
+            },
+            {
+              "value": "Black Stainless Steel",
+              "synonyms": [
+                "bss",
+                "black stainless"
+              ]
+            },
+            {
+              "value": "Slate",
+              "synonyms": [
+                "sl",
+                "slate"
+              ]
+            },
+            {
+              "value": "Panel Ready",
+              "synonyms": [
+                "panel ready",
+                "pr"
+              ]
+            },
+            {
+              "value": "Juniper",
+              "synonyms": [
+                "juniper",
+                "jp"
+              ]
+            },
+            {
+              "value": "Black Onyx",
+              "synonyms": [
+                "bo",
+                "black onyx"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "laundry_dryers",
+      "dept": "Appliances",
+      "class": "Large Appliances",
+      "fine": "Dryers",
+      "classpath": "Appliances & Consumer Electronics>Laundry Appliances>Dryers",
+      "product_name": "Dryer",
+      "unspsc": "52141602",
+      "strong_keywords": [
+        "dryer"
+      ],
+      "exclude_keywords": [
+        "hair dryer",
+        "dryer vent",
+        "heater kit"
+      ],
+      "short_desc_attributes": [
+        "Fuel Type",
+        "Capacity",
+        "Color"
+      ],
+      "invoice_attributes": [
+        "Fuel Type",
+        "Color",
+        "Voltage Rating",
+        "Capacity"
+      ],
+      "attributes": [
+        {
+          "label": "Series",
+          "render": "{value}"
+        },
+        {
+          "label": "Fuel Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Electric",
+              "synonyms": [
+                "elect",
+                "electric",
+                "elec",
+                "e"
+              ]
+            },
+            {
+              "value": "Gas",
+              "synonyms": [
+                "gas",
+                "g",
+                "lp",
+                "natural gas"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Capacity",
+          "uom": "cu ft",
+          "measurement_type": "Volume",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Voltage Rating",
+          "uom": "V",
+          "render": "{value} {uom}"
+        },
+        {
+          "label": "Number of Cycles",
+          "render": "{value} Cycles"
+        },
+        {
+          "label": "Size",
+          "render": "{value}"
+        },
+        {
+          "label": "Material",
+          "render": "{value}"
+        },
+        {
+          "label": "Color",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "White",
+              "synonyms": [
+                "wh",
+                "wht",
+                "white"
+              ]
+            },
+            {
+              "value": "Black",
+              "synonyms": [
+                "bk",
+                "blk",
+                "black"
+              ]
+            },
+            {
+              "value": "Stainless Steel",
+              "synonyms": [
+                "ss",
+                "sst"
+              ]
+            },
+            {
+              "value": "Dark Graphite",
+              "synonyms": [
+                "dg"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "laundry_washers",
+      "dept": "Appliances",
+      "class": "Large Appliances",
+      "fine": "Washers",
+      "classpath": "Appliances & Consumer Electronics>Laundry Appliances>Washing Machines",
+      "product_name": "Washer",
+      "unspsc": "52141601",
+      "strong_keywords": [
+        "washer",
+        "washing machine",
+        "laundry center"
+      ],
+      "exclude_keywords": [
+        "pressure washer",
+        "washer bolt",
+        "flat washer",
+        "dishwasher"
+      ],
+      "short_desc_attributes": [
+        "Capacity",
+        "Color"
+      ],
+      "invoice_attributes": [
+        "Color",
+        "Voltage Rating",
+        "Capacity"
+      ],
+      "attributes": [
+        {
+          "label": "Series",
+          "render": "{value}"
+        },
+        {
+          "label": "Configuration",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Top Load",
+              "synonyms": [
+                "top load",
+                "topload",
+                "tl"
+              ]
+            },
+            {
+              "value": "Front Load",
+              "synonyms": [
+                "front load",
+                "frontload",
+                "fl"
+              ]
+            },
+            {
+              "value": "Laundry Center",
+              "synonyms": [
+                "laundry center",
+                "stacked"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Capacity",
+          "uom": "cu ft",
+          "measurement_type": "Volume",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Voltage Rating",
+          "uom": "V",
+          "render": "{value} {uom}"
+        },
+        {
+          "label": "Number of Cycles",
+          "render": "{value} Cycles"
+        },
+        {
+          "label": "Size",
+          "render": "{value}"
+        },
+        {
+          "label": "Color",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "White",
+              "synonyms": [
+                "wh",
+                "wht",
+                "white"
+              ]
+            },
+            {
+              "value": "Black",
+              "synonyms": [
+                "bk",
+                "blk",
+                "black"
+              ]
+            },
+            {
+              "value": "Stainless Steel",
+              "synonyms": [
+                "ss",
+                "sst"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "refrigerators",
+      "dept": "Appliances",
+      "class": "Large Appliances",
+      "fine": "Refrigerators",
+      "classpath": "Appliances & Consumer Electronics>Kitchen Appliances>Refrigerators",
+      "product_name": "Refrigerator",
+      "unspsc": "52141501",
+      "strong_keywords": [
+        "fridge",
+        "refrigerator"
+      ],
+      "short_desc_attributes": [
+        "Capacity",
+        "Configuration",
+        "Color"
+      ],
+      "invoice_attributes": [
+        "Capacity",
+        "Color"
+      ],
+      "attributes": [
+        {
+          "label": "Series",
+          "render": "{value}"
+        },
+        {
+          "label": "Configuration",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Top Freezer",
+              "synonyms": [
+                "top freezer",
+                "top mount"
+              ]
+            },
+            {
+              "value": "Bottom Freezer",
+              "synonyms": [
+                "bottom freezer",
+                "bottom mount"
+              ]
+            },
+            {
+              "value": "French Door",
+              "synonyms": [
+                "french door"
+              ]
+            },
+            {
+              "value": "Side by Side",
+              "synonyms": [
+                "side by side",
+                "sxs"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Capacity",
+          "uom": "cu ft",
+          "measurement_type": "Volume",
+          "render": "{value} {uom} {label}",
+          "extract_patterns": [
+            "(\\d{1,2}(?:\\.\\d)?)\\s*cf\\b",
+            "(\\d{1,2}(?:\\.\\d)?)\\s*cu\\.?\\s*ft"
+          ]
+        },
+        {
+          "label": "Voltage Rating",
+          "uom": "V",
+          "render": "{value} {uom}"
+        },
+        {
+          "label": "Size",
+          "render": "{value}"
+        },
+        {
+          "label": "Color",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Stainless Steel",
+              "synonyms": [
+                "ss",
+                "sst"
+              ]
+            },
+            {
+              "value": "Black",
+              "synonyms": [
+                "bk",
+                "blk"
+              ]
+            },
+            {
+              "value": "White",
+              "synonyms": [
+                "wh",
+                "wht"
+              ]
+            },
+            {
+              "value": "Slate",
+              "synonyms": [
+                "sl",
+                "slate"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "freezers",
+      "dept": "Appliances",
+      "class": "Large Appliances",
+      "fine": "Freezers",
+      "classpath": "Appliances & Consumer Electronics>Kitchen Appliances>Freezers",
+      "product_name": "Freezer",
+      "unspsc": "52141502",
+      "strong_keywords": [
+        "freezer"
+      ],
+      "short_desc_attributes": [
+        "Configuration",
+        "Capacity",
+        "Color"
+      ],
+      "invoice_attributes": [
+        "Configuration",
+        "Capacity"
+      ],
+      "attributes": [
+        {
+          "label": "Configuration",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Chest",
+              "synonyms": [
+                "chest"
+              ]
+            },
+            {
+              "value": "Upright",
+              "synonyms": [
+                "upright"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Capacity",
+          "uom": "cu ft",
+          "measurement_type": "Volume",
+          "render": "{value} {uom} {label}",
+          "extract_patterns": [
+            "(\\d{1,2}(?:\\.\\d)?)\\s*cf\\b"
+          ]
+        },
+        {
+          "label": "Voltage Rating",
+          "uom": "V",
+          "render": "{value} {uom}"
+        },
+        {
+          "label": "Color",
+          "render": "{value}"
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "cooking_ranges",
+      "dept": "Appliances",
+      "class": "Large Appliances",
+      "fine": "Ranges",
+      "classpath": "Appliances & Consumer Electronics>Kitchen Appliances>Ranges",
+      "product_name": "Range",
+      "unspsc": "52141504",
+      "strong_keywords": [
+        "range"
+      ],
+      "exclude_keywords": [
+        "range grill",
+        "dual range",
+        "long range"
+      ],
+      "short_desc_attributes": [
+        "Fuel Type",
+        "Size",
+        "Color"
+      ],
+      "invoice_attributes": [
+        "Fuel Type",
+        "Size",
+        "Color"
+      ],
+      "attributes": [
+        {
+          "label": "Series",
+          "render": "{value}"
+        },
+        {
+          "label": "Fuel Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Electric",
+              "synonyms": [
+                "elect",
+                "electric",
+                "elec"
+              ]
+            },
+            {
+              "value": "Gas",
+              "synonyms": [
+                "gas"
+              ]
+            },
+            {
+              "value": "Induction",
+              "synonyms": [
+                "induction"
+              ]
+            },
+            {
+              "value": "Dual Fuel",
+              "synonyms": [
+                "dual fuel"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Size",
+          "uom": "in",
+          "measurement_type": "Length",
+          "render": "{value} {uom}",
+          "extract_patterns": [
+            "(\\d{2})\\s*(?:in|inch)\\b"
+          ]
+        },
+        {
+          "label": "Number of Burners",
+          "render": "{value} Burners"
+        },
+        {
+          "label": "Voltage Rating",
+          "uom": "V",
+          "render": "{value} {uom}"
+        },
+        {
+          "label": "Color",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Stainless Steel",
+              "synonyms": [
+                "ss",
+                "sst"
+              ]
+            },
+            {
+              "value": "Black",
+              "synonyms": [
+                "bk",
+                "blk"
+              ]
+            },
+            {
+              "value": "White",
+              "synonyms": [
+                "wh"
+              ]
+            },
+            {
+              "value": "Black Stainless Steel",
+              "synonyms": [
+                "bs",
+                "bss"
+              ]
+            },
+            {
+              "value": "Black Onyx",
+              "synonyms": [
+                "bo"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "microwaves",
+      "dept": "Appliances",
+      "class": "Small Appliances",
+      "fine": "Microwaves",
+      "classpath": "Appliances & Consumer Electronics>Kitchen Appliances>Microwave Ovens",
+      "product_name": "Microwave",
+      "unspsc": "52141506",
+      "strong_keywords": [
+        "microwave",
+        "mocrowave"
+      ],
+      "short_desc_attributes": [
+        "Installation Type",
+        "Color"
+      ],
+      "invoice_attributes": [
+        "Installation Type",
+        "Color"
+      ],
+      "attributes": [
+        {
+          "label": "Series",
+          "render": "{value}"
+        },
+        {
+          "label": "Installation Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Over the Range",
+              "synonyms": [
+                "otr",
+                "over the range",
+                "over-the-range"
+              ]
+            },
+            {
+              "value": "Countertop",
+              "synonyms": [
+                "countertop",
+                "counter top"
+              ]
+            },
+            {
+              "value": "Built-in",
+              "synonyms": [
+                "built in",
+                "builtin"
+              ]
+            },
+            {
+              "value": "Drawer",
+              "synonyms": [
+                "drawer"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Capacity",
+          "uom": "cu ft",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Voltage Rating",
+          "uom": "V",
+          "render": "{value} {uom}"
+        },
+        {
+          "label": "Color",
+          "render": "{value}"
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "small_kitchen_appliances",
+      "dept": "Appliances",
+      "class": "Small Appliances",
+      "fine": "Countertop Appliances",
+      "classpath": "Appliances & Consumer Electronics>Kitchen Appliances>Countertop Appliances",
+      "product_name": "Countertop Appliance",
+      "unspsc": "52141550",
+      "strong_keywords": [
+        "coffee maker",
+        "espresso",
+        "toaster",
+        "toast oven",
+        "beverage center",
+        "wall oven",
+        "cooktop"
+      ],
+      "short_desc_attributes": [
+        "Appliance Type",
+        "Color"
+      ],
+      "invoice_attributes": [
+        "Appliance Type",
+        "Color"
+      ],
+      "attributes": [
+        {
+          "label": "Series",
+          "render": "{value}"
+        },
+        {
+          "label": "Appliance Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Drip Coffee Maker",
+              "synonyms": [
+                "drip coffee maker",
+                "coffee maker"
+              ]
+            },
+            {
+              "value": "Espresso Machine",
+              "synonyms": [
+                "espresso machine",
+                "espresso",
+                "auto espresso machine"
+              ]
+            },
+            {
+              "value": "Toaster",
+              "synonyms": [
+                "toaster"
+              ]
+            },
+            {
+              "value": "Toaster Oven",
+              "synonyms": [
+                "toast oven",
+                "toaster oven"
+              ]
+            },
+            {
+              "value": "Beverage Center",
+              "synonyms": [
+                "beverage center",
+                "tall beverage center"
+              ]
+            },
+            {
+              "value": "Wall Oven",
+              "synonyms": [
+                "wall oven"
+              ]
+            },
+            {
+              "value": "Cooktop",
+              "synonyms": [
+                "cooktop"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Voltage Rating",
+          "uom": "V",
+          "render": "{value} {uom}"
+        },
+        {
+          "label": "Color",
+          "render": "{value}"
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "lamps",
+      "dept": "Electrical",
+      "class": "Lighting",
+      "fine": "Light Bulbs",
+      "classpath": "Electrical>Lamps & Light Bulbs>Light Bulbs",
+      "product_name": "Lamp",
+      "unspsc": "39101619",
+      "strong_keywords": [
+        "led bulb",
+        "led med",
+        "led cand",
+        "led a19",
+        "led br30",
+        "led br40",
+        "led par",
+        "led st19",
+        "led b11",
+        "led g25",
+        "led mr16",
+        "led t8",
+        "led t9",
+        "led f15",
+        "led ba11",
+        "led a21",
+        "led a23",
+        "led a15",
+        "led r20",
+        "incan",
+        "incandescent",
+        "halogen",
+        "flor bulb",
+        "fluorescent",
+        "sodium med",
+        "adj base",
+        "inc a15",
+        "halogen pin",
+        "halogen t3"
+      ],
+      "keywords": [
+        "led",
+        "bulb",
+        "cand",
+        "w flor",
+        "w incan",
+        "w halogen"
+      ],
+      "exclude_keywords": [
+        "led strip",
+        "led wrap",
+        "downlight",
+        "down light",
+        "ceiling",
+        "wall",
+        "panel",
+        "shop light",
+        "flat panel",
+        "tape light",
+        "highbay",
+        "work light",
+        "flashlight",
+        "headlight",
+        "battery",
+        "laser",
+        "chand",
+        "chandelier"
+      ],
+      "short_desc_attributes": [
+        "Wattage Equivalent",
+        "Bulb Shape",
+        "Base Type",
+        "Color Temperature"
+      ],
+      "invoice_attributes": [
+        "Bulb Shape",
+        "Wattage Equivalent",
+        "Color Temperature"
+      ],
+      "attributes": [
+        {
+          "label": "Lamp Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "LED",
+              "synonyms": [
+                "led"
+              ]
+            },
+            {
+              "value": "Incandescent",
+              "synonyms": [
+                "incan",
+                "incandescent"
+              ]
+            },
+            {
+              "value": "Halogen",
+              "synonyms": [
+                "halogen"
+              ]
+            },
+            {
+              "value": "Fluorescent",
+              "synonyms": [
+                "flor",
+                "fluorescent",
+                "cfl"
+              ]
+            },
+            {
+              "value": "High Pressure Sodium",
+              "synonyms": [
+                "sodium",
+                "hps"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Wattage Equivalent",
+          "uom": "W",
+          "measurement_type": "Power",
+          "render": "{value} {uom} Equivalent",
+          "extract_patterns": [
+            "(\\d{1,3})\\s*w\\b"
+          ]
+        },
+        {
+          "label": "Bulb Shape",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "A19",
+              "synonyms": [
+                "a19"
+              ]
+            },
+            {
+              "value": "A21",
+              "synonyms": [
+                "a21"
+              ]
+            },
+            {
+              "value": "A23",
+              "synonyms": [
+                "a23"
+              ]
+            },
+            {
+              "value": "A15",
+              "synonyms": [
+                "a15"
+              ]
+            },
+            {
+              "value": "BR30",
+              "synonyms": [
+                "br30"
+              ]
+            },
+            {
+              "value": "BR40",
+              "synonyms": [
+                "br40"
+              ]
+            },
+            {
+              "value": "R20",
+              "synonyms": [
+                "r20"
+              ]
+            },
+            {
+              "value": "PAR16",
+              "synonyms": [
+                "par16"
+              ]
+            },
+            {
+              "value": "PAR20",
+              "synonyms": [
+                "par20"
+              ]
+            },
+            {
+              "value": "PAR30L",
+              "synonyms": [
+                "par30l"
+              ]
+            },
+            {
+              "value": "PAR38",
+              "synonyms": [
+                "par38"
+              ]
+            },
+            {
+              "value": "ST19",
+              "synonyms": [
+                "st19"
+              ]
+            },
+            {
+              "value": "B11",
+              "synonyms": [
+                "b11"
+              ]
+            },
+            {
+              "value": "BA11",
+              "synonyms": [
+                "ba11"
+              ]
+            },
+            {
+              "value": "G25",
+              "synonyms": [
+                "g25"
+              ]
+            },
+            {
+              "value": "MR16",
+              "synonyms": [
+                "mr16"
+              ]
+            },
+            {
+              "value": "F15",
+              "synonyms": [
+                "f15"
+              ]
+            },
+            {
+              "value": "T3",
+              "synonyms": [
+                "t3"
+              ]
+            },
+            {
+              "value": "T4",
+              "synonyms": [
+                "t4"
+              ]
+            },
+            {
+              "value": "T8",
+              "synonyms": [
+                "t8"
+              ]
+            },
+            {
+              "value": "T9",
+              "synonyms": [
+                "t9"
+              ]
+            },
+            {
+              "value": "T12",
+              "synonyms": [
+                "t12"
+              ]
+            },
+            {
+              "value": "Candelabra",
+              "synonyms": [
+                "cand",
+                "candelabra"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Base Type",
+          "render": "{value} Base",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Medium",
+              "synonyms": [
+                "med",
+                "medium",
+                "e26"
+              ]
+            },
+            {
+              "value": "Candelabra",
+              "synonyms": [
+                "cand",
+                "candelabra",
+                "e12"
+              ]
+            },
+            {
+              "value": "Pin",
+              "synonyms": [
+                "pin",
+                "gu10",
+                "g9"
+              ]
+            },
+            {
+              "value": "Adjustable",
+              "synonyms": [
+                "adj base",
+                "adjustable base"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Color Temperature",
+          "uom": "K",
+          "measurement_type": "Color Temperature",
+          "render": "{value} {uom} {label}",
+          "extract_patterns": [
+            "\\b(\\d{2})k\\b"
+          ]
+        },
+        {
+          "label": "Quantity per Package",
+          "uom": "pk",
+          "render": "{value} {uom}",
+          "extract_patterns": [
+            "(\\d{1,2})\\s*pk\\b",
+            "(\\d{1,2})\\s*pack\\b"
+          ]
+        },
+        {
+          "label": "Dimmable",
+          "render": "{value}",
+          "values": [
+            {
+              "value": "Yes",
+              "synonyms": [
+                "dimmable"
+              ]
+            },
+            {
+              "value": "No",
+              "synonyms": [
+                "non-dimmable"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "light_fixtures",
+      "dept": "Electrical",
+      "class": "Lighting",
+      "fine": "Light Fixtures",
+      "classpath": "Electrical>Lighting Fixtures>Interior Lighting Fixtures",
+      "product_name": "Light Fixture",
+      "unspsc": "39111524",
+      "strong_keywords": [
+        "wall light",
+        "wall lt",
+        "wall sconce",
+        "chandelier",
+        "pendant lt",
+        "pendant light",
+        "ceiling lt",
+        "ceiling light",
+        "bath light",
+        "down light",
+        "downlight",
+        "wrap lt",
+        "wrap light",
+        "strip light",
+        "flat panel",
+        "highbay",
+        "shop light",
+        "post lt",
+        "ext wall lt",
+        "motion lt",
+        "tape light",
+        "chand lt",
+        "down lt",
+        "led ceiling",
+        "nano clip light"
+      ],
+      "exclude_keywords": [
+        "bulb",
+        "lamp only",
+        "flashlight",
+        "headlight",
+        "work light",
+        "laser"
+      ],
+      "short_desc_attributes": [
+        "Fixture Type",
+        "Mounting Type",
+        "Finish"
+      ],
+      "invoice_attributes": [
+        "Fixture Type",
+        "Finish",
+        "Size"
+      ],
+      "attributes": [
+        {
+          "label": "Fixture Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Wall Sconce",
+              "synonyms": [
+                "wall light",
+                "wall lt",
+                "wall sconce",
+                "ext wall lt"
+              ]
+            },
+            {
+              "value": "Chandelier",
+              "synonyms": [
+                "chandelier",
+                "chand lt"
+              ]
+            },
+            {
+              "value": "Pendant",
+              "synonyms": [
+                "pendant lt",
+                "pendant light",
+                "pendant"
+              ]
+            },
+            {
+              "value": "Ceiling Mount",
+              "synonyms": [
+                "ceiling lt",
+                "ceiling light"
+              ]
+            },
+            {
+              "value": "Vanity",
+              "synonyms": [
+                "bath light",
+                "bath lt",
+                "vanity"
+              ]
+            },
+            {
+              "value": "Recessed Downlight",
+              "synonyms": [
+                "down light",
+                "downlight",
+                "retro"
+              ]
+            },
+            {
+              "value": "Wrap",
+              "synonyms": [
+                "wrap lt",
+                "wrap light"
+              ]
+            },
+            {
+              "value": "Strip",
+              "synonyms": [
+                "strip light",
+                "tape light",
+                "strip lt"
+              ]
+            },
+            {
+              "value": "Flat Panel",
+              "synonyms": [
+                "flat panel",
+                "led flat panel"
+              ]
+            },
+            {
+              "value": "High Bay",
+              "synonyms": [
+                "highbay",
+                "high bay"
+              ]
+            },
+            {
+              "value": "Shop Light",
+              "synonyms": [
+                "shop light"
+              ]
+            },
+            {
+              "value": "Post Light",
+              "synonyms": [
+                "post lt",
+                "post light"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Mounting Type",
+          "render": "{value} Mounting"
+        },
+        {
+          "label": "Size",
+          "uom": "in",
+          "measurement_type": "Length",
+          "render": "{value} {uom}",
+          "extract_patterns": [
+            "(\\d{1,2}(?:-\\d+/\\d+)?)\\s*(?:in|\")\\b"
+          ]
+        },
+        {
+          "label": "Finish",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Black",
+              "synonyms": [
+                "bk",
+                "blk",
+                "black"
+              ]
+            },
+            {
+              "value": "Brushed Nickel",
+              "synonyms": [
+                "ni",
+                "bn",
+                "brushed nickel"
+              ]
+            },
+            {
+              "value": "Chrome",
+              "synonyms": [
+                "ch",
+                "chrome"
+              ]
+            },
+            {
+              "value": "White",
+              "synonyms": [
+                "wh",
+                "white"
+              ]
+            },
+            {
+              "value": "Champagne Bronze",
+              "synonyms": [
+                "cpz",
+                "champagne bronze"
+              ]
+            },
+            {
+              "value": "Bronze",
+              "synonyms": [
+                "bz",
+                "bronze"
+              ]
+            },
+            {
+              "value": "Polished Brass",
+              "synonyms": [
+                "pb",
+                "polished brass"
+              ]
+            },
+            {
+              "value": "Textured Black",
+              "synonyms": [
+                "bkt",
+                "textured black"
+              ]
+            },
+            {
+              "value": "Brushed Silver",
+              "synonyms": [
+                "bsl",
+                "brushed silver"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Color Temperature",
+          "uom": "K",
+          "render": "{value} {uom} {label}",
+          "extract_patterns": [
+            "\\b(\\d{2})k\\b"
+          ]
+        },
+        {
+          "label": "Voltage Rating",
+          "uom": "V",
+          "render": "{value} {uom}"
+        },
+        {
+          "label": "Number of Lights",
+          "render": "{value} Lights"
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "wiring_devices",
+      "dept": "Electrical",
+      "class": "Wiring Devices",
+      "fine": "Receptacles & Switches",
+      "classpath": "Electrical>Wiring Devices>Receptacles & Switches",
+      "product_name": "Wiring Device",
+      "unspsc": "39121004",
+      "strong_keywords": [
+        "outlet",
+        "outler",
+        "receptacle",
+        "gfci",
+        "gfi",
+        "switch",
+        "dimmer",
+        "wallplate",
+        "wall plate",
+        "cord conn",
+        "wall tap",
+        "cord grip",
+        "timer",
+        "decor plate",
+        "port decor"
+      ],
+      "exclude_keywords": [
+        "box cover",
+        "load center",
+        "voltage detector"
+      ],
+      "short_desc_attributes": [
+        "Device Type",
+        "Amperage Rating",
+        "Color"
+      ],
+      "invoice_attributes": [
+        "Device Type",
+        "Amperage Rating",
+        "Voltage Rating",
+        "Color"
+      ],
+      "attributes": [
+        {
+          "label": "Device Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Receptacle",
+              "synonyms": [
+                "outlet",
+                "outler",
+                "receptacle"
+              ]
+            },
+            {
+              "value": "GFCI Receptacle",
+              "synonyms": [
+                "gfci outlet",
+                "gfci outler",
+                "gfci",
+                "gfi"
+              ]
+            },
+            {
+              "value": "Switch",
+              "synonyms": [
+                "switch",
+                "toggle"
+              ]
+            },
+            {
+              "value": "Dimmer",
+              "synonyms": [
+                "dimmer"
+              ]
+            },
+            {
+              "value": "Wall Plate",
+              "synonyms": [
+                "wallplate",
+                "wall plate",
+                "decor plate"
+              ]
+            },
+            {
+              "value": "Cord Connector",
+              "synonyms": [
+                "cord conn",
+                "cord connector"
+              ]
+            },
+            {
+              "value": "Plug",
+              "synonyms": [
+                "plug"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Amperage Rating",
+          "uom": "A",
+          "measurement_type": "Amperage",
+          "render": "{value} {uom}",
+          "extract_patterns": [
+            "(\\d{1,3})\\s*a\\b"
+          ]
+        },
+        {
+          "label": "Voltage Rating",
+          "uom": "V",
+          "measurement_type": "Voltage",
+          "render": "{value} {uom}",
+          "extract_patterns": [
+            "(\\d{2,3})\\s*v\\b"
+          ]
+        },
+        {
+          "label": "Number of Gangs",
+          "render": "{value} Gang",
+          "extract_patterns": [
+            "(\\d)\\s*g\\b"
+          ]
+        },
+        {
+          "label": "Color",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "White",
+              "synonyms": [
+                "wh",
+                "white"
+              ]
+            },
+            {
+              "value": "Ivory",
+              "synonyms": [
+                "iv",
+                "ivory"
+              ]
+            },
+            {
+              "value": "Light Almond",
+              "synonyms": [
+                "la",
+                "light almond"
+              ]
+            },
+            {
+              "value": "Brown",
+              "synonyms": [
+                "br",
+                "brown"
+              ]
+            },
+            {
+              "value": "Black",
+              "synonyms": [
+                "bk",
+                "black"
+              ]
+            },
+            {
+              "value": "Stainless Steel",
+              "synonyms": [
+                "ss",
+                "stainless"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "electrical_boxes",
+      "dept": "Electrical",
+      "class": "Boxes & Enclosures",
+      "fine": "Boxes & Covers",
+      "classpath": "Electrical>Boxes, Conduit & Fittings>Electrical Boxes & Covers",
+      "product_name": "Electrical Box",
+      "unspsc": "39131709",
+      "strong_keywords": [
+        "box cover",
+        "oct box",
+        "square box",
+        "2g box",
+        "gfi box",
+        "gfci duplex box",
+        "adjust hanger"
+      ],
+      "keywords": [
+        "box"
+      ],
+      "exclude_keywords": [
+        "tool box",
+        "tool chest",
+        "drawer tool box",
+        "packout"
+      ],
+      "short_desc_attributes": [
+        "Product Type",
+        "Size",
+        "Number of Gangs"
+      ],
+      "invoice_attributes": [
+        "Product Type",
+        "Size",
+        "Number of Gangs"
+      ],
+      "attributes": [
+        {
+          "label": "Product Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Octagon Box",
+              "synonyms": [
+                "oct box",
+                "octagon"
+              ]
+            },
+            {
+              "value": "Square Box",
+              "synonyms": [
+                "square box",
+                "sq box"
+              ]
+            },
+            {
+              "value": "Box Cover",
+              "synonyms": [
+                "box cover",
+                "cover"
+              ]
+            },
+            {
+              "value": "Hanger Bar",
+              "synonyms": [
+                "adjust hanger",
+                "hanger"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Size",
+          "render": "{value}"
+        },
+        {
+          "label": "Number of Gangs",
+          "render": "{value} Gang",
+          "extract_patterns": [
+            "(\\d)\\s*g\\b"
+          ]
+        },
+        {
+          "label": "Material",
+          "render": "{value}",
+          "values": [
+            {
+              "value": "Steel",
+              "synonyms": [
+                "steel"
+              ]
+            },
+            {
+              "value": "PVC",
+              "synonyms": [
+                "pvc"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "load_centers",
+      "dept": "Electrical",
+      "class": "Power Distribution",
+      "fine": "Load Centers",
+      "classpath": "Electrical>Power Distribution>Load Centers & Breaker Panels",
+      "product_name": "Load Center",
+      "unspsc": "39121610",
+      "strong_keywords": [
+        "load center",
+        "load cntr"
+      ],
+      "short_desc_attributes": [
+        "Amperage Rating",
+        "Number of Spaces"
+      ],
+      "invoice_attributes": [
+        "Amperage Rating",
+        "Number of Spaces"
+      ],
+      "attributes": [
+        {
+          "label": "Amperage Rating",
+          "uom": "A",
+          "render": "{value} {uom}",
+          "extract_patterns": [
+            "(\\d{2,3})\\s*a\\b"
+          ]
+        },
+        {
+          "label": "Number of Spaces",
+          "render": "{value} Spaces"
+        },
+        {
+          "label": "Number of Circuits",
+          "render": "{value} Circuits"
+        },
+        {
+          "label": "Voltage Rating",
+          "uom": "V",
+          "render": "{value} {uom}"
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "wire_and_cable",
+      "dept": "Electrical",
+      "class": "Wire & Cable",
+      "fine": "Building Wire",
+      "classpath": "Electrical>Wire & Cable>Building Wire & Cable",
+      "product_name": "Wire",
+      "unspsc": "26121600",
+      "strong_keywords": [
+        "wire",
+        "cable",
+        "cord",
+        "triplex"
+      ],
+      "exclude_keywords": [
+        "cord grip",
+        "wire set",
+        "cordless",
+        "wire brush",
+        "cord conn"
+      ],
+      "short_desc_attributes": [
+        "Conductor Size",
+        "Number of Conductors",
+        "Cable Type"
+      ],
+      "invoice_attributes": [
+        "Conductor Size",
+        "Cable Type"
+      ],
+      "attributes": [
+        {
+          "label": "Conductor Size",
+          "uom": "AWG",
+          "render": "{value} {uom}",
+          "extract_patterns": [
+            "\\b(\\d{1,2}|\\d/\\d)\\s*[-/]\\s*\\d\\b"
+          ]
+        },
+        {
+          "label": "Number of Conductors",
+          "render": "{value} Conductors"
+        },
+        {
+          "label": "Cable Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "SO Cord",
+              "synonyms": [
+                "so cord",
+                "so"
+              ]
+            },
+            {
+              "value": "SJEWA",
+              "synonyms": [
+                "sjewa"
+              ]
+            },
+            {
+              "value": "CAT5E",
+              "synonyms": [
+                "cat5e"
+              ]
+            },
+            {
+              "value": "Entrance Cable",
+              "synonyms": [
+                "entrance cable"
+              ]
+            },
+            {
+              "value": "Triplex",
+              "synonyms": [
+                "triplex",
+                "ud alum",
+                "ud aluminum"
+              ]
+            },
+            {
+              "value": "Class 3",
+              "synonyms": [
+                "cl3"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Conductor Material",
+          "render": "{value}",
+          "values": [
+            {
+              "value": "Copper",
+              "synonyms": [
+                "copper",
+                "cu"
+              ]
+            },
+            {
+              "value": "Aluminum",
+              "synonyms": [
+                "aluminum",
+                "alum",
+                "al"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Selling Unit",
+          "render": "{value}",
+          "values": [
+            {
+              "value": "Linear Foot",
+              "synonyms": [
+                "linear foot",
+                "linear ft"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "composite_decking",
+      "dept": "Building Materials",
+      "class": "Decking",
+      "fine": "Composite & PVC Decking",
+      "classpath": "Building Materials>Decking & Railing>Composite & PVC Decking",
+      "product_name": "Decking Board",
+      "unspsc": "30103600",
+      "strong_keywords": [
+        "decking"
+      ],
+      "exclude_keywords": [
+        "fascia",
+        "joist tape",
+        "rail",
+        "post"
+      ],
+      "short_desc_attributes": [
+        "Collection",
+        "Color",
+        "Edge Profile",
+        "Nominal Size",
+        "Length"
+      ],
+      "invoice_attributes": [
+        "Nominal Size",
+        "Length",
+        "Color",
+        "Edge Profile"
+      ],
+      "attributes": [
+        {
+          "label": "Collection",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Vintage",
+              "synonyms": [
+                "vintage"
+              ]
+            },
+            {
+              "value": "Landmark",
+              "synonyms": [
+                "landmark"
+              ]
+            },
+            {
+              "value": "Harvest",
+              "synonyms": [
+                "harvest"
+              ]
+            },
+            {
+              "value": "Transcend Lineage",
+              "synonyms": [
+                "transcend lineage",
+                "lineage"
+              ]
+            },
+            {
+              "value": "Enhance Naturals",
+              "synonyms": [
+                "enhance naturals"
+              ]
+            },
+            {
+              "value": "Enhance Basics",
+              "synonyms": [
+                "enhance basics"
+              ]
+            },
+            {
+              "value": "Select 2.0",
+              "synonyms": [
+                "select 2.0"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Material",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "PVC",
+              "synonyms": [
+                "pvc"
+              ]
+            },
+            {
+              "value": "Wood-Plastic Composite",
+              "synonyms": [
+                "composite",
+                "wpc"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Edge Profile",
+          "render": "{value} Edge",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Square",
+              "synonyms": [
+                "sq edge",
+                "square edge",
+                "sq edg",
+                "sq ed"
+              ]
+            },
+            {
+              "value": "Grooved",
+              "synonyms": [
+                "grooved",
+                "groove",
+                "groov"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Nominal Size",
+          "render": "{value}",
+          "extract_patterns": [
+            "(\\d+(?:/\\d+)?n?x\\d+)"
+          ]
+        },
+        {
+          "label": "Length",
+          "uom": "ft",
+          "measurement_type": "Length",
+          "render": "{value} {uom} {label}",
+          "extract_patterns": [
+            "-(\\d{2})'",
+            "-(\\d{2})\\b"
+          ]
+        },
+        {
+          "label": "Color",
+          "render": "{value}",
+          "filtering": true
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "fascia_trim",
+      "dept": "Building Materials",
+      "class": "Decking",
+      "fine": "Fascia & Trim",
+      "classpath": "Building Materials>Decking & Railing>Deck Fascia & Trim",
+      "product_name": "Fascia Board",
+      "unspsc": "30103600",
+      "strong_keywords": [
+        "fascia"
+      ],
+      "keywords": [
+        "lineage"
+      ],
+      "short_desc_attributes": [
+        "Collection",
+        "Color",
+        "Nominal Size",
+        "Length"
+      ],
+      "invoice_attributes": [
+        "Nominal Size",
+        "Length",
+        "Color"
+      ],
+      "attributes": [
+        {
+          "label": "Collection",
+          "render": "{value}",
+          "filtering": true
+        },
+        {
+          "label": "Material",
+          "render": "{value}",
+          "values": [
+            {
+              "value": "PVC",
+              "synonyms": [
+                "pvc"
+              ]
+            },
+            {
+              "value": "Wood-Plastic Composite",
+              "synonyms": [
+                "composite"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Nominal Size",
+          "render": "{value}",
+          "extract_patterns": [
+            "(\\d+x\\d+)"
+          ]
+        },
+        {
+          "label": "Length",
+          "uom": "ft",
+          "render": "{value} {uom} {label}",
+          "extract_patterns": [
+            "-(\\d{2})'"
+          ]
+        },
+        {
+          "label": "Color",
+          "render": "{value}",
+          "filtering": true
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "railing_systems",
+      "dept": "Building Materials",
+      "class": "Decking",
+      "fine": "Railing",
+      "classpath": "Building Materials>Decking & Railing>Railing Systems",
+      "product_name": "Railing Kit",
+      "unspsc": "30151800",
+      "strong_keywords": [
+        "rail kit",
+        "t-rail",
+        "rail panel",
+        "railing",
+        "ada rail",
+        "ada wall mount",
+        "ada int end cap",
+        "gravity latch",
+        "gate"
+      ],
+      "keywords": [
+        "rail"
+      ],
+      "exclude_keywords": [
+        "rafter",
+        "guardrail highway",
+        "castle gate",
+        "decking",
+        "fascia"
+      ],
+      "short_desc_attributes": [
+        "Product Type",
+        "Length",
+        "Baluster Type",
+        "Color"
+      ],
+      "invoice_attributes": [
+        "Product Type",
+        "Length",
+        "Color"
+      ],
+      "attributes": [
+        {
+          "label": "Product Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Horizontal Rail Kit",
+              "synonyms": [
+                "horiz",
+                "horizontal"
+              ]
+            },
+            {
+              "value": "Stair Rail Kit",
+              "synonyms": [
+                "stair",
+                "str rail"
+              ]
+            },
+            {
+              "value": "Rail Panel",
+              "synonyms": [
+                "rail panel"
+              ]
+            },
+            {
+              "value": "Gate",
+              "synonyms": [
+                "gate"
+              ]
+            },
+            {
+              "value": "ADA Handrail",
+              "synonyms": [
+                "ada rail",
+                "ada wall mount",
+                "ada int end cap"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Length",
+          "uom": "ft",
+          "measurement_type": "Length",
+          "render": "{value} {uom} {label}",
+          "extract_patterns": [
+            "^(\\d{1,2})'"
+          ]
+        },
+        {
+          "label": "Baluster Type",
+          "render": "{value} Balusters",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Square Composite",
+              "synonyms": [
+                "sq composite",
+                "square composite"
+              ]
+            },
+            {
+              "value": "Round Aluminum",
+              "synonyms": [
+                "rnd black alum",
+                "round alum",
+                "black alum baluster"
+              ]
+            },
+            {
+              "value": "Square Aluminum",
+              "synonyms": [
+                "sq bal",
+                "square alum"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Material",
+          "render": "{value}",
+          "values": [
+            {
+              "value": "Aluminum",
+              "synonyms": [
+                "alum",
+                "aluminum",
+                "alm"
+              ]
+            },
+            {
+              "value": "Composite",
+              "synonyms": [
+                "composite"
+              ]
+            },
+            {
+              "value": "Vinyl",
+              "synonyms": [
+                "vinyl"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Color",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "White",
+              "synonyms": [
+                "wh",
+                "white"
+              ]
+            },
+            {
+              "value": "Black",
+              "synonyms": [
+                "black",
+                "bk"
+              ]
+            },
+            {
+              "value": "Clay",
+              "synonyms": [
+                "clay"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "posts_and_sleeves",
+      "dept": "Building Materials",
+      "class": "Decking",
+      "fine": "Posts & Sleeves",
+      "classpath": "Building Materials>Decking & Railing>Posts, Sleeves & Caps",
+      "product_name": "Post",
+      "unspsc": "30151800",
+      "strong_keywords": [
+        "post sleeve",
+        "post trim",
+        "post cap",
+        "post wrap",
+        "blank post",
+        "support post"
+      ],
+      "keywords": [
+        "post"
+      ],
+      "short_desc_attributes": [
+        "Product Type",
+        "Nominal Size",
+        "Color"
+      ],
+      "invoice_attributes": [
+        "Product Type",
+        "Nominal Size",
+        "Color"
+      ],
+      "attributes": [
+        {
+          "label": "Product Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Post Sleeve",
+              "synonyms": [
+                "post sleeve"
+              ]
+            },
+            {
+              "value": "Post Trim",
+              "synonyms": [
+                "post trim"
+              ]
+            },
+            {
+              "value": "Post Cap",
+              "synonyms": [
+                "post cap",
+                "flat post cap"
+              ]
+            },
+            {
+              "value": "Post Wrap",
+              "synonyms": [
+                "post wrap"
+              ]
+            },
+            {
+              "value": "Support Post",
+              "synonyms": [
+                "support post",
+                "blank post"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Nominal Size",
+          "render": "{value}",
+          "extract_patterns": [
+            "(\\d+x\\d+)"
+          ]
+        },
+        {
+          "label": "Length",
+          "uom": "in",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Material",
+          "render": "{value}",
+          "values": [
+            {
+              "value": "Aluminum",
+              "synonyms": [
+                "alum",
+                "aluminum"
+              ]
+            },
+            {
+              "value": "Vinyl",
+              "synonyms": [
+                "vinyl"
+              ]
+            },
+            {
+              "value": "Composite",
+              "synonyms": [
+                "composite"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Color",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "White",
+              "synonyms": [
+                "wh",
+                "white"
+              ]
+            },
+            {
+              "value": "Black",
+              "synonyms": [
+                "black",
+                "bk",
+                "tbk"
+              ]
+            },
+            {
+              "value": "Clay",
+              "synonyms": [
+                "clay"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "abrasive_discs",
+      "dept": "Tools",
+      "class": "Power Tool Accessories",
+      "fine": "Abrasives",
+      "classpath": "Tools & Hardware>Power Tool Accessories>Abrasives",
+      "product_name": "Abrasive",
+      "unspsc": "31191500",
+      "strong_keywords": [
+        "sanding belt",
+        "sanding sponge",
+        "stikit",
+        "abranet",
+        "hiolit",
+        "abrasive",
+        "sanding disc",
+        "sand paper",
+        "sandpaper",
+        "gr pro"
+      ],
+      "keywords": [
+        "disc/box",
+        "grit"
+      ],
+      "exclude_keywords": [
+        "cut-off",
+        "cut off",
+        "grinding wheel",
+        "saw blade"
+      ],
+      "short_desc_attributes": [
+        "Abrasive Type",
+        "Grit",
+        "Size",
+        "Quantity per Package"
+      ],
+      "invoice_attributes": [
+        "Abrasive Type",
+        "Grit",
+        "Size"
+      ],
+      "attributes": [
+        {
+          "label": "Abrasive Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Sanding Belt",
+              "synonyms": [
+                "sanding belt"
+              ]
+            },
+            {
+              "value": "Sanding Disc",
+              "synonyms": [
+                "sanding disc",
+                "disc"
+              ]
+            },
+            {
+              "value": "Sanding Sheet",
+              "synonyms": [
+                "sheet",
+                "sheets"
+              ]
+            },
+            {
+              "value": "Sanding Sponge",
+              "synonyms": [
+                "sanding sponge",
+                "sponge"
+              ]
+            },
+            {
+              "value": "Abrasive Net",
+              "synonyms": [
+                "abranet"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Grit",
+          "render": "{value} Grit",
+          "filtering": true,
+          "extract_patterns": [
+            "\\bp(\\d{2,4})\\b",
+            "(\\d{2,4})\\s*grit"
+          ]
+        },
+        {
+          "label": "Size",
+          "render": "{value}"
+        },
+        {
+          "label": "Quantity per Package",
+          "render": "{value} per Package",
+          "extract_patterns": [
+            "(\\d{1,3})\\s*(?:pc|disc)"
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "cutting_grinding_wheels",
+      "dept": "Tools",
+      "class": "Power Tool Accessories",
+      "fine": "Cutting & Grinding Wheels",
+      "classpath": "Tools & Hardware>Power Tool Accessories>Cutting & Grinding Wheels",
+      "product_name": "Cut-Off Wheel",
+      "unspsc": "23241600",
+      "strong_keywords": [
+        "cut off disc",
+        "cut-off disc",
+        "cut off wheel",
+        "grinding wheel",
+        "cut and grind disc",
+        "cut n grind",
+        "metal cut"
+      ],
+      "short_desc_attributes": [
+        "Wheel Type",
+        "Diameter",
+        "Thickness",
+        "Arbor Size",
+        "Application"
+      ],
+      "invoice_attributes": [
+        "Wheel Type",
+        "Diameter",
+        "Thickness",
+        "Arbor Size"
+      ],
+      "attributes": [
+        {
+          "label": "Wheel Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Cut-Off Wheel",
+              "synonyms": [
+                "cut off disc",
+                "cut-off disc",
+                "cut off wheel"
+              ]
+            },
+            {
+              "value": "Grinding Wheel",
+              "synonyms": [
+                "grinding wheel"
+              ]
+            },
+            {
+              "value": "Cut & Grind Wheel",
+              "synonyms": [
+                "cut and grind",
+                "cut n grind",
+                "dual metal cut"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Diameter",
+          "uom": "in",
+          "measurement_type": "Length",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Thickness",
+          "uom": "in",
+          "measurement_type": "Length",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Arbor Size",
+          "uom": "in",
+          "measurement_type": "Length",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Application",
+          "render": "For {value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Metal",
+              "synonyms": [
+                "metal"
+              ]
+            },
+            {
+              "value": "Masonry",
+              "synonyms": [
+                "masonry"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Quantity per Package",
+          "render": "{value} per Package",
+          "extract_patterns": [
+            "(\\d{1,3})\\s*pc\\b"
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "saw_blades",
+      "dept": "Tools",
+      "class": "Power Tool Accessories",
+      "fine": "Saw Blades",
+      "classpath": "Tools & Hardware>Power Tool Accessories>Saw Blades",
+      "product_name": "Saw Blade",
+      "unspsc": "27112700",
+      "strong_keywords": [
+        "saw blade",
+        "circ saw blade",
+        "jig saw blade",
+        "sawzall blade",
+        "tile blade",
+        "diamond blade",
+        "planer blade",
+        "planer knives",
+        "dado",
+        "hole dozer"
+      ],
+      "keywords": [
+        "blade"
+      ],
+      "exclude_keywords": [
+        "pruning shears replacement blade",
+        "band file",
+        "planing machine"
+      ],
+      "short_desc_attributes": [
+        "Blade Type",
+        "Diameter",
+        "Tooth Count",
+        "Application"
+      ],
+      "invoice_attributes": [
+        "Blade Type",
+        "Diameter",
+        "Tooth Count"
+      ],
+      "attributes": [
+        {
+          "label": "Blade Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Circular Saw Blade",
+              "synonyms": [
+                "circ saw blade",
+                "circular saw blade",
+                "saw blade"
+              ]
+            },
+            {
+              "value": "Jig Saw Blade",
+              "synonyms": [
+                "jig saw blade"
+              ]
+            },
+            {
+              "value": "Reciprocating Blade",
+              "synonyms": [
+                "sawzall blade",
+                "recip blade"
+              ]
+            },
+            {
+              "value": "Diamond Blade",
+              "synonyms": [
+                "diamond blade",
+                "diamond tile blade",
+                "rim diamond"
+              ]
+            },
+            {
+              "value": "Planer Blade",
+              "synonyms": [
+                "planer blade",
+                "planer knives"
+              ]
+            },
+            {
+              "value": "Dado Set",
+              "synonyms": [
+                "dado"
+              ]
+            },
+            {
+              "value": "Hole Saw",
+              "synonyms": [
+                "hole dozer",
+                "hole saw"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Diameter",
+          "uom": "in",
+          "measurement_type": "Length",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Tooth Count",
+          "render": "{value} Tooth",
+          "extract_patterns": [
+            "(\\d{1,3})\\s*(?:tooth|t)\\b",
+            "(\\d{1,3})\\s*teeth"
+          ]
+        },
+        {
+          "label": "Arbor Size",
+          "uom": "in",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Application",
+          "render": "For {value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Wood",
+              "synonyms": [
+                "wood",
+                "framing",
+                "plywood"
+              ]
+            },
+            {
+              "value": "Metal",
+              "synonyms": [
+                "metal"
+              ]
+            },
+            {
+              "value": "Tile",
+              "synonyms": [
+                "tile",
+                "glass tile"
+              ]
+            },
+            {
+              "value": "Laminate",
+              "synonyms": [
+                "laminate",
+                "wood flooring"
+              ]
+            },
+            {
+              "value": "Cement",
+              "synonyms": [
+                "cement"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "driver_bits",
+      "dept": "Tools",
+      "class": "Power Tool Accessories",
+      "fine": "Driver Bits",
+      "classpath": "Tools & Hardware>Power Tool Accessories>Driver & Drill Bits",
+      "product_name": "Driver Bit",
+      "unspsc": "27112800",
+      "strong_keywords": [
+        "drive bit",
+        "driver bit",
+        "torsion bit",
+        "bit holder",
+        "screw setter",
+        "socket adapter",
+        "phillips bit",
+        "impact driver set",
+        "countersink",
+        "plug cutter",
+        "router bit"
+      ],
+      "keywords": [
+        "bit"
+      ],
+      "exclude_keywords": [
+        "battery",
+        "drill driver",
+        "impact driver drill"
+      ],
+      "short_desc_attributes": [
+        "Drive Type",
+        "Drive Size",
+        "Length",
+        "Quantity per Package"
+      ],
+      "invoice_attributes": [
+        "Drive Type",
+        "Drive Size",
+        "Length"
+      ],
+      "attributes": [
+        {
+          "label": "Bit Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Driver Bit",
+              "synonyms": [
+                "drive bit",
+                "driver bit"
+              ]
+            },
+            {
+              "value": "Torsion Bit",
+              "synonyms": [
+                "torsion bit"
+              ]
+            },
+            {
+              "value": "Bit Holder",
+              "synonyms": [
+                "bit holder"
+              ]
+            },
+            {
+              "value": "Socket Adapter",
+              "synonyms": [
+                "socket adapter"
+              ]
+            },
+            {
+              "value": "Screw Setter",
+              "synonyms": [
+                "screw setter"
+              ]
+            },
+            {
+              "value": "Router Bit",
+              "synonyms": [
+                "router bit"
+              ]
+            },
+            {
+              "value": "Countersink",
+              "synonyms": [
+                "countersink"
+              ]
+            },
+            {
+              "value": "Plug Cutter",
+              "synonyms": [
+                "plug cutter"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Drive Type",
+          "render": "{value} Drive",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Phillips",
+              "synonyms": [
+                "phillips",
+                "ph"
+              ]
+            },
+            {
+              "value": "Square",
+              "synonyms": [
+                "square",
+                "sq",
+                "robertson"
+              ]
+            },
+            {
+              "value": "Torx",
+              "synonyms": [
+                "torx",
+                "trox",
+                "t"
+              ]
+            },
+            {
+              "value": "Slotted",
+              "synonyms": [
+                "slotted",
+                "flat"
+              ]
+            },
+            {
+              "value": "Hex",
+              "synonyms": [
+                "hex"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Drive Size",
+          "render": "{value}",
+          "extract_patterns": [
+            "#(\\d{1,2})\\b"
+          ]
+        },
+        {
+          "label": "Length",
+          "uom": "in",
+          "measurement_type": "Length",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Quantity per Package",
+          "render": "{value} per Package",
+          "extract_patterns": [
+            "(\\d{1,3})\\s*pc\\b"
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "cordless_power_tools",
+      "dept": "Tools",
+      "class": "Power Tools",
+      "fine": "Cordless Tools",
+      "classpath": "Tools & Hardware>Power Tools>Cordless Power Tools",
+      "product_name": "Cordless Tool",
+      "unspsc": "27112100",
+      "strong_keywords": [
+        "impact driver",
+        "impact wrench",
+        "drill driver",
+        "hammer drill",
+        "angle grinder",
+        "die grinder",
+        "circ saw",
+        "circular saw",
+        "miter saw",
+        "recip saw",
+        "jig saw",
+        "track saw",
+        "orbit sander",
+        "orbital sander",
+        "random orbit sander",
+        "polisher",
+        "band file",
+        "plunge router",
+        "framing nailer",
+        "brad nailer",
+        "roofing nailer",
+        "finish nailer",
+        "stapler",
+        "string trimmer",
+        "hedge trimmer",
+        "blower",
+        "grease gun",
+        "rachet",
+        "ratchet",
+        "autofeed",
+        "collated attach",
+        "vacuum",
+        "jobsite speaker",
+        "drill"
+      ],
+      "exclude_keywords": [
+        "blade",
+        "bit",
+        "battery",
+        "charger",
+        "magazine",
+        "bag",
+        "stand",
+        "drill press",
+        "socket set",
+        "impact driver set",
+        "countersink",
+        "autofeed",
+        "planer knives",
+        "stock feeder"
+      ],
+      "short_desc_attributes": [
+        "Tool Type",
+        "Voltage Rating",
+        "Drive Size",
+        "Included Items"
+      ],
+      "invoice_attributes": [
+        "Tool Type",
+        "Voltage Rating",
+        "Drive Size"
+      ],
+      "attributes": [
+        {
+          "label": "Tool Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Impact Driver",
+              "synonyms": [
+                "impact driver"
+              ]
+            },
+            {
+              "value": "Impact Wrench",
+              "synonyms": [
+                "impact wrench",
+                "angle impact",
+                "impact"
+              ]
+            },
+            {
+              "value": "Drill/Driver",
+              "synonyms": [
+                "drill driver",
+                "drill/driver",
+                "drill"
+              ]
+            },
+            {
+              "value": "Hammer Drill",
+              "synonyms": [
+                "hammer drill"
+              ]
+            },
+            {
+              "value": "Angle Grinder",
+              "synonyms": [
+                "angle grinder",
+                "grinder"
+              ]
+            },
+            {
+              "value": "Die Grinder",
+              "synonyms": [
+                "die grinder"
+              ]
+            },
+            {
+              "value": "Circular Saw",
+              "synonyms": [
+                "circ saw",
+                "circular saw"
+              ]
+            },
+            {
+              "value": "Miter Saw",
+              "synonyms": [
+                "miter saw"
+              ]
+            },
+            {
+              "value": "Reciprocating Saw",
+              "synonyms": [
+                "recip saw",
+                "reciprocating saw"
+              ]
+            },
+            {
+              "value": "Jig Saw",
+              "synonyms": [
+                "jig saw",
+                "jigsaw"
+              ]
+            },
+            {
+              "value": "Track Saw",
+              "synonyms": [
+                "track saw",
+                "plunge-cut track saw"
+              ]
+            },
+            {
+              "value": "Random Orbit Sander",
+              "synonyms": [
+                "orbit sander",
+                "orbital sander",
+                "random orbit sander",
+                "sander"
+              ]
+            },
+            {
+              "value": "Router",
+              "synonyms": [
+                "plunge router",
+                "router"
+              ]
+            },
+            {
+              "value": "Framing Nailer",
+              "synonyms": [
+                "framing nailer"
+              ]
+            },
+            {
+              "value": "Brad Nailer",
+              "synonyms": [
+                "brad nailer"
+              ]
+            },
+            {
+              "value": "Roofing Nailer",
+              "synonyms": [
+                "roofing nailer",
+                "coil roofing"
+              ]
+            },
+            {
+              "value": "Finish Nailer",
+              "synonyms": [
+                "finish nailer"
+              ]
+            },
+            {
+              "value": "Stapler",
+              "synonyms": [
+                "stapler"
+              ]
+            },
+            {
+              "value": "String Trimmer",
+              "synonyms": [
+                "string trimmer",
+                "trimmer tool"
+              ]
+            },
+            {
+              "value": "Hedge Trimmer",
+              "synonyms": [
+                "hedge trimmer"
+              ]
+            },
+            {
+              "value": "Blower",
+              "synonyms": [
+                "blower"
+              ]
+            },
+            {
+              "value": "Grease Gun",
+              "synonyms": [
+                "grease gun"
+              ]
+            },
+            {
+              "value": "Ratchet",
+              "synonyms": [
+                "rachet",
+                "ratchet"
+              ]
+            },
+            {
+              "value": "Vacuum",
+              "synonyms": [
+                "vacuum"
+              ]
+            },
+            {
+              "value": "Jobsite Speaker",
+              "synonyms": [
+                "jobsite speaker"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Voltage Rating",
+          "uom": "V",
+          "measurement_type": "Voltage",
+          "render": "{value} {uom}",
+          "extract_patterns": [
+            "(\\d{2})\\s*v\\b",
+            "\\bm(12|18)\\b"
+          ]
+        },
+        {
+          "label": "Drive Size",
+          "uom": "in",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Battery Platform",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "M12",
+              "synonyms": [
+                "m12"
+              ]
+            },
+            {
+              "value": "M18",
+              "synonyms": [
+                "m18"
+              ]
+            },
+            {
+              "value": "20V MAX",
+              "synonyms": [
+                "20v",
+                "20v max"
+              ]
+            },
+            {
+              "value": "60V MAX",
+              "synonyms": [
+                "60v"
+              ]
+            },
+            {
+              "value": "18V LXT",
+              "synonyms": [
+                "18v"
+              ]
+            },
+            {
+              "value": "40V XGT",
+              "synonyms": [
+                "40v"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Included Items",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Tool Only",
+              "synonyms": [
+                "bare",
+                "bare tool",
+                "tool only"
+              ]
+            },
+            {
+              "value": "Kit",
+              "synonyms": [
+                "kit"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "batteries_chargers",
+      "dept": "Tools",
+      "class": "Power Tools",
+      "fine": "Batteries & Chargers",
+      "classpath": "Tools & Hardware>Power Tools>Batteries & Chargers",
+      "product_name": "Battery",
+      "unspsc": "26111700",
+      "strong_keywords": [
+        "battery",
+        "charger",
+        "starter kit",
+        "powerpack",
+        "power supply",
+        "battery pack",
+        "battery mounts"
+      ],
+      "short_desc_attributes": [
+        "Product Type",
+        "Voltage Rating",
+        "Capacity"
+      ],
+      "invoice_attributes": [
+        "Product Type",
+        "Voltage Rating",
+        "Capacity"
+      ],
+      "attributes": [
+        {
+          "label": "Product Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Battery",
+              "synonyms": [
+                "battery",
+                "powerpack",
+                "battery pack"
+              ]
+            },
+            {
+              "value": "Charger",
+              "synonyms": [
+                "charger"
+              ]
+            },
+            {
+              "value": "Starter Kit",
+              "synonyms": [
+                "starter kit"
+              ]
+            },
+            {
+              "value": "Power Supply",
+              "synonyms": [
+                "power supply"
+              ]
+            },
+            {
+              "value": "Mount",
+              "synonyms": [
+                "battery mounts",
+                "mount"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Voltage Rating",
+          "uom": "V",
+          "render": "{value} {uom}",
+          "extract_patterns": [
+            "(\\d{2})\\s*v\\b"
+          ]
+        },
+        {
+          "label": "Capacity",
+          "uom": "Ah",
+          "measurement_type": "Charge",
+          "render": "{value} {uom} {label}",
+          "extract_patterns": [
+            "(\\d+(?:\\.\\d)?)\\s*ah\\b"
+          ]
+        },
+        {
+          "label": "Quantity per Package",
+          "render": "{value} per Package",
+          "extract_patterns": [
+            "(\\d)\\s*pk\\b",
+            "(\\d)pk"
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "hand_tools",
+      "dept": "Tools",
+      "class": "Hand Tools",
+      "fine": "Hand Tools",
+      "classpath": "Tools & Hardware>Hand Tools>General Hand Tools",
+      "product_name": "Hand Tool",
+      "unspsc": "27111500",
+      "strong_keywords": [
+        "wrench set",
+        "socket set",
+        "mechanics set",
+        "rafter square",
+        "t-square",
+        "mason line",
+        "chalk",
+        "snip",
+        "folding knife",
+        "pencil",
+        "file bstd",
+        "screwdriver",
+        "universal joint",
+        "tool chest",
+        "organizer",
+        "holster",
+        "voltage detector",
+        "laser",
+        "bigcal",
+        "tire pressure",
+        "kneeling pad",
+        "hex plus",
+        "carrying bit holder"
+      ],
+      "short_desc_attributes": [
+        "Tool Type",
+        "Size",
+        "Quantity per Package"
+      ],
+      "invoice_attributes": [
+        "Tool Type",
+        "Size"
+      ],
+      "attributes": [
+        {
+          "label": "Tool Type",
+          "render": "{value}",
+          "filtering": true
+        },
+        {
+          "label": "Size",
+          "render": "{value}"
+        },
+        {
+          "label": "Drive Size",
+          "uom": "in",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Quantity per Package",
+          "render": "{value} Piece",
+          "extract_patterns": [
+            "(\\d{1,3})\\s*pc\\b"
+          ]
+        },
+        {
+          "label": "Material",
+          "render": "{value}"
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ],
+      "exclude_keywords": [
+        "autofeed",
+        "drill press"
+      ]
+    },
+    {
+      "id": "safety_ppe",
+      "dept": "Safety",
+      "class": "Personal Protective Equipment",
+      "fine": "PPE",
+      "classpath": "Safety & Security>Personal Protective Equipment>Protective Equipment",
+      "product_name": "Safety Equipment",
+      "unspsc": "46181500",
+      "strong_keywords": [
+        "safety glasses",
+        "safety - ",
+        "heated glove",
+        "work glove",
+        "glove liners",
+        "hearing protector",
+        "heated hoodie",
+        "fire extinguisher",
+        "smoke & co alarm",
+        "smoke alarm"
+      ],
+      "short_desc_attributes": [
+        "Equipment Type",
+        "Size",
+        "Color"
+      ],
+      "invoice_attributes": [
+        "Equipment Type",
+        "Size",
+        "Color"
+      ],
+      "attributes": [
+        {
+          "label": "Equipment Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Safety Glasses",
+              "synonyms": [
+                "safety glasses",
+                "safety"
+              ]
+            },
+            {
+              "value": "Heated Glove",
+              "synonyms": [
+                "heated glove"
+              ]
+            },
+            {
+              "value": "Glove Liner",
+              "synonyms": [
+                "glove liners",
+                "glove liner"
+              ]
+            },
+            {
+              "value": "Hearing Protector",
+              "synonyms": [
+                "hearing protector"
+              ]
+            },
+            {
+              "value": "Heated Hoodie",
+              "synonyms": [
+                "heated hoodie"
+              ]
+            },
+            {
+              "value": "Fire Extinguisher",
+              "synonyms": [
+                "fire extinguisher"
+              ]
+            },
+            {
+              "value": "Smoke & CO Alarm",
+              "synonyms": [
+                "smoke & co alarm",
+                "smoke alarm"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Size",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "XS",
+              "synonyms": [
+                "xs"
+              ]
+            },
+            {
+              "value": "S",
+              "synonyms": [
+                "s",
+                "sm",
+                "small"
+              ]
+            },
+            {
+              "value": "M",
+              "synonyms": [
+                "m",
+                "md",
+                "medium"
+              ]
+            },
+            {
+              "value": "L",
+              "synonyms": [
+                "l",
+                "lg",
+                "large"
+              ]
+            },
+            {
+              "value": "XL",
+              "synonyms": [
+                "xl"
+              ]
+            },
+            {
+              "value": "2XL",
+              "synonyms": [
+                "2x",
+                "2xl",
+                "xxl"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Color",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Black",
+              "synonyms": [
+                "blk",
+                "black",
+                "bk"
+              ]
+            },
+            {
+              "value": "Gray",
+              "synonyms": [
+                "gray",
+                "grey"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Lens Type",
+          "render": "{value} Lens"
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "fasteners",
+      "dept": "Hardware",
+      "class": "Fasteners",
+      "fine": "Nails & Staples",
+      "classpath": "Tools & Hardware>Fasteners>Nails & Staples",
+      "product_name": "Fastener",
+      "unspsc": "31161500",
+      "strong_keywords": [
+        "finish nail",
+        "staple",
+        "brad",
+        "smooth shank",
+        "sm bb"
+      ],
+      "keywords": [
+        "nail"
+      ],
+      "exclude_keywords": [
+        "nailer"
+      ],
+      "short_desc_attributes": [
+        "Fastener Type",
+        "Length",
+        "Gauge",
+        "Quantity per Package"
+      ],
+      "invoice_attributes": [
+        "Fastener Type",
+        "Length",
+        "Gauge"
+      ],
+      "attributes": [
+        {
+          "label": "Fastener Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Finish Nail",
+              "synonyms": [
+                "finish nail"
+              ]
+            },
+            {
+              "value": "Staple",
+              "synonyms": [
+                "staple"
+              ]
+            },
+            {
+              "value": "Brad Nail",
+              "synonyms": [
+                "brad"
+              ]
+            },
+            {
+              "value": "Framing Nail",
+              "synonyms": [
+                "sm bb",
+                "smooth shank"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Length",
+          "uom": "in",
+          "measurement_type": "Length",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Gauge",
+          "uom": "gauge",
+          "render": "{value} {uom}",
+          "extract_patterns": [
+            "(\\d{2})\\s*ga\\b"
+          ]
+        },
+        {
+          "label": "Quantity per Package",
+          "render": "{value} per Package",
+          "extract_patterns": [
+            "(\\d{3,5})\\s*ct\\b",
+            "(\\d)m\\b"
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "siding_products",
+      "dept": "Building Materials",
+      "class": "Siding",
+      "fine": "Siding",
+      "classpath": "Building Materials>Siding & Accessories>Siding",
+      "product_name": "Siding",
+      "unspsc": "30161700",
+      "strong_keywords": [
+        "sdg",
+        "siding",
+        "hardieplank",
+        "hardiepanel",
+        "smart lap",
+        "smart pan",
+        "smart vented soff",
+        "soffit",
+        "premier rib"
+      ],
+      "short_desc_attributes": [
+        "Siding Type",
+        "Material",
+        "Nominal Size",
+        "Texture"
+      ],
+      "invoice_attributes": [
+        "Siding Type",
+        "Nominal Size",
+        "Texture"
+      ],
+      "attributes": [
+        {
+          "label": "Siding Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Lap Siding",
+              "synonyms": [
+                "sdg",
+                "lap sdg",
+                "smart lap",
+                "hardieplank"
+              ]
+            },
+            {
+              "value": "Panel Siding",
+              "synonyms": [
+                "panel",
+                "smart pan",
+                "hardiepanel"
+              ]
+            },
+            {
+              "value": "Soffit",
+              "synonyms": [
+                "soffit",
+                "smart vented soff"
+              ]
+            },
+            {
+              "value": "Metal Panel",
+              "synonyms": [
+                "premier rib"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Material",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Fiber Cement",
+              "synonyms": [
+                "hardie",
+                "fiber cement"
+              ]
+            },
+            {
+              "value": "Engineered Wood",
+              "synonyms": [
+                "smart",
+                "engineered wood"
+              ]
+            },
+            {
+              "value": "Steel",
+              "synonyms": [
+                "steel",
+                "metal"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Nominal Size",
+          "render": "{value}"
+        },
+        {
+          "label": "Texture",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Smooth",
+              "synonyms": [
+                "smooth"
+              ]
+            },
+            {
+              "value": "Cedar",
+              "synonyms": [
+                "cedar"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Finish",
+          "render": "{value}",
+          "values": [
+            {
+              "value": "Primed",
+              "synonyms": [
+                "primed"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Color",
+          "render": "{value}"
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "panels_sheathing",
+      "dept": "Building Materials",
+      "class": "Panels",
+      "fine": "Sheathing & Drywall",
+      "classpath": "Building Materials>Panels & Sheathing>Structural Panels",
+      "product_name": "Panel",
+      "unspsc": "30103500",
+      "strong_keywords": [
+        "drywall",
+        "sheathing",
+        "osb",
+        "sub floor",
+        "rainscreen",
+        "zip r",
+        "plusosb",
+        "attic access door",
+        "fine fissured"
+      ],
+      "short_desc_attributes": [
+        "Panel Type",
+        "Thickness",
+        "Nominal Size"
+      ],
+      "invoice_attributes": [
+        "Panel Type",
+        "Thickness",
+        "Nominal Size"
+      ],
+      "attributes": [
+        {
+          "label": "Panel Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Drywall",
+              "synonyms": [
+                "drywall"
+              ]
+            },
+            {
+              "value": "Insulated Sheathing",
+              "synonyms": [
+                "r-sheathing",
+                "insulated r-sheathing",
+                "zip r"
+              ]
+            },
+            {
+              "value": "Rainscreen",
+              "synonyms": [
+                "rainscreen"
+              ]
+            },
+            {
+              "value": "Subfloor OSB",
+              "synonyms": [
+                "sub floor",
+                "plusosb",
+                "osb"
+              ]
+            },
+            {
+              "value": "Ceiling Tile",
+              "synonyms": [
+                "fine fissured"
+              ]
+            },
+            {
+              "value": "Access Door",
+              "synonyms": [
+                "attic access door"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Thickness",
+          "uom": "in",
+          "measurement_type": "Length",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Nominal Size",
+          "render": "{value}"
+        },
+        {
+          "label": "R-Value",
+          "render": "R-{value}",
+          "extract_patterns": [
+            "r(\\d+(?:\\.\\d)?)\\b"
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ],
+      "exclude_keywords": [
+        "screw setter"
+      ]
+    },
+    {
+      "id": "roofing_products",
+      "dept": "Building Materials",
+      "class": "Roofing",
+      "fine": "Roofing",
+      "classpath": "Building Materials>Roofing>Roofing Materials",
+      "product_name": "Roofing Material",
+      "unspsc": "30151500",
+      "strong_keywords": [
+        "ice guard",
+        "eaveguard",
+        "trudef",
+        "shingle",
+        "weathr lk mat"
+      ],
+      "short_desc_attributes": [
+        "Product Type",
+        "Coverage",
+        "Color"
+      ],
+      "invoice_attributes": [
+        "Product Type",
+        "Coverage",
+        "Color"
+      ],
+      "attributes": [
+        {
+          "label": "Product Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Ice & Water Barrier",
+              "synonyms": [
+                "ice guard",
+                "eaveguard",
+                "ice barrier"
+              ]
+            },
+            {
+              "value": "Architectural Shingle",
+              "synonyms": [
+                "trudef",
+                "shingle",
+                "duration"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Coverage",
+          "render": "{value}"
+        },
+        {
+          "label": "Color",
+          "render": "{value}"
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "windows_doors",
+      "dept": "Building Materials",
+      "class": "Windows & Doors",
+      "fine": "Windows & Doors",
+      "classpath": "Building Materials>Windows & Doors>Windows & Exterior Doors",
+      "product_name": "Window",
+      "unspsc": "30171500",
+      "strong_keywords": [
+        "patio dr",
+        "patio door",
+        "skylt",
+        "skylight",
+        "slider",
+        "bsmt",
+        "hopper",
+        "gliding patio",
+        "threshold",
+        "cas vin wrapped"
+      ],
+      "short_desc_attributes": [
+        "Product Type",
+        "Nominal Size",
+        "Glazing",
+        "Color"
+      ],
+      "invoice_attributes": [
+        "Product Type",
+        "Nominal Size",
+        "Color"
+      ],
+      "attributes": [
+        {
+          "label": "Product Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Gliding Patio Door",
+              "synonyms": [
+                "gliding patio dr",
+                "patio dr"
+              ]
+            },
+            {
+              "value": "Fixed Skylight",
+              "synonyms": [
+                "fxd skylt",
+                "skylight"
+              ]
+            },
+            {
+              "value": "Slider Window",
+              "synonyms": [
+                "slider"
+              ]
+            },
+            {
+              "value": "Hopper Window",
+              "synonyms": [
+                "hopper",
+                "bsmt"
+              ]
+            },
+            {
+              "value": "Threshold",
+              "synonyms": [
+                "threshold"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Nominal Size",
+          "render": "{value}"
+        },
+        {
+          "label": "Glazing",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Low-E Argon",
+              "synonyms": [
+                "lowe arg",
+                "low-e arg",
+                "lowe-2",
+                "lowe"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Handing",
+          "render": "{value} Hand",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Left",
+              "synonyms": [
+                "l",
+                "left"
+              ]
+            },
+            {
+              "value": "Right",
+              "synonyms": [
+                "r",
+                "right"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Color",
+          "render": "{value}"
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "tapes_sealants",
+      "dept": "Building Materials",
+      "class": "Adhesives & Sealants",
+      "fine": "Tapes",
+      "classpath": "Building Materials>Adhesives, Sealants & Tape>Tape",
+      "product_name": "Tape",
+      "unspsc": "31201500",
+      "strong_keywords": [
+        "tape",
+        "mortar"
+      ],
+      "exclude_keywords": [
+        "tape light",
+        "us tape",
+        "measuring tape"
+      ],
+      "short_desc_attributes": [
+        "Tape Type",
+        "Width",
+        "Length"
+      ],
+      "invoice_attributes": [
+        "Tape Type",
+        "Width",
+        "Length"
+      ],
+      "attributes": [
+        {
+          "label": "Tape Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Electrical Tape",
+              "synonyms": [
+                "vinyl elect tape",
+                "elect tape"
+              ]
+            },
+            {
+              "value": "Joist Tape",
+              "synonyms": [
+                "joist tape",
+                "deck joist tape"
+              ]
+            },
+            {
+              "value": "Expansion Joint",
+              "synonyms": [
+                "emseal"
+              ]
+            },
+            {
+              "value": "Mortar",
+              "synonyms": [
+                "mortar"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Width",
+          "uom": "in",
+          "measurement_type": "Length",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Length",
+          "uom": "ft",
+          "measurement_type": "Length",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Color",
+          "render": "{value}"
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "ceiling_fans",
+      "dept": "Electrical",
+      "class": "Fans",
+      "fine": "Ceiling Fans",
+      "classpath": "Electrical>Fans & Ventilation>Ceiling Fans",
+      "product_name": "Ceiling Fan",
+      "unspsc": "40101609",
+      "strong_keywords": [
+        "fan"
+      ],
+      "exclude_keywords": [
+        "fan blade",
+        "exhaust fan motor"
+      ],
+      "short_desc_attributes": [
+        "Blade Span",
+        "Finish"
+      ],
+      "invoice_attributes": [
+        "Blade Span",
+        "Finish"
+      ],
+      "attributes": [
+        {
+          "label": "Blade Span",
+          "uom": "in",
+          "measurement_type": "Length",
+          "render": "{value} {uom} {label}",
+          "extract_patterns": [
+            "(\\d{2})\\s*(?:in|\")\\b"
+          ]
+        },
+        {
+          "label": "Finish",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "White",
+              "synonyms": [
+                "wh",
+                "white"
+              ]
+            },
+            {
+              "value": "Matte Black",
+              "synonyms": [
+                "mb",
+                "matte black"
+              ]
+            },
+            {
+              "value": "Bronze",
+              "synonyms": [
+                "bz",
+                "bronze"
+              ]
+            },
+            {
+              "value": "Polished Brass",
+              "synonyms": [
+                "pb"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Voltage Rating",
+          "uom": "V",
+          "render": "{value} {uom}"
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "stationary_machinery",
+      "dept": "Tools",
+      "class": "Machinery",
+      "fine": "Woodworking Machinery",
+      "classpath": "Tools & Hardware>Machinery>Woodworking Machinery",
+      "product_name": "Woodworking Machine",
+      "unspsc": "23153000",
+      "strong_keywords": [
+        "bandsaw",
+        "table saw",
+        "drill press",
+        "planer",
+        "jointer",
+        "shaper",
+        "stock feeder",
+        "dust extractor",
+        "spindle sander",
+        "belt and spindle"
+      ],
+      "short_desc_attributes": [
+        "Machine Type",
+        "Capacity",
+        "Motor Power",
+        "Voltage Rating"
+      ],
+      "invoice_attributes": [
+        "Machine Type",
+        "Capacity",
+        "Motor Power"
+      ],
+      "attributes": [
+        {
+          "label": "Machine Type",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Band Saw",
+              "synonyms": [
+                "bandsaw",
+                "band saw"
+              ]
+            },
+            {
+              "value": "Table Saw",
+              "synonyms": [
+                "table saw"
+              ]
+            },
+            {
+              "value": "Drill Press",
+              "synonyms": [
+                "drill press"
+              ]
+            },
+            {
+              "value": "Planer",
+              "synonyms": [
+                "planer",
+                "planing machine"
+              ]
+            },
+            {
+              "value": "Jointer",
+              "synonyms": [
+                "jointer"
+              ]
+            },
+            {
+              "value": "Shaper",
+              "synonyms": [
+                "shaper"
+              ]
+            },
+            {
+              "value": "Stock Feeder",
+              "synonyms": [
+                "stock feeder"
+              ]
+            },
+            {
+              "value": "Dust Extractor",
+              "synonyms": [
+                "dust extractor"
+              ]
+            },
+            {
+              "value": "Spindle Sander",
+              "synonyms": [
+                "spindle sander",
+                "belt and spindle"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Capacity",
+          "uom": "in",
+          "measurement_type": "Length",
+          "render": "{value} {uom} {label}"
+        },
+        {
+          "label": "Motor Power",
+          "uom": "hp",
+          "measurement_type": "Power",
+          "render": "{value} {uom} {label}",
+          "extract_patterns": [
+            "(\\d+(?:\\.\\d+)?(?:-\\d+/\\d+)?)\\s*hp\\b"
+          ]
+        },
+        {
+          "label": "Voltage Rating",
+          "uom": "V",
+          "render": "{value} {uom}",
+          "extract_patterns": [
+            "(\\d{3})\\s*v\\b"
+          ]
+        },
+        {
+          "label": "Phase",
+          "render": "{value} Phase",
+          "extract_patterns": [
+            "(\\d)\\s*ph\\b"
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ],
+      "exclude_keywords": [
+        "planer blade",
+        "planer knives"
+      ]
+    },
+    {
+      "id": "lumber",
+      "dept": "Building Materials",
+      "class": "Lumber",
+      "fine": "Dimensional Lumber",
+      "classpath": "Building Materials>Lumber & Composites>Dimensional Lumber",
+      "product_name": "Lumber",
+      "unspsc": "30103100",
+      "strong_keywords": [
+        "doug fir",
+        "stk smooth"
+      ],
+      "short_desc_attributes": [
+        "Species",
+        "Nominal Size",
+        "Length",
+        "Grade"
+      ],
+      "invoice_attributes": [
+        "Species",
+        "Nominal Size",
+        "Length"
+      ],
+      "attributes": [
+        {
+          "label": "Species",
+          "render": "{value}",
+          "filtering": true,
+          "values": [
+            {
+              "value": "Douglas Fir",
+              "synonyms": [
+                "doug fir",
+                "df"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Nominal Size",
+          "render": "{value}",
+          "extract_patterns": [
+            "(\\d+x\\d+)"
+          ]
+        },
+        {
+          "label": "Length",
+          "uom": "ft",
+          "render": "{value} {uom} {label}",
+          "extract_patterns": [
+            "-(\\d{2})'"
+          ]
+        },
+        {
+          "label": "Grade",
+          "render": "{value}",
+          "values": [
+            {
+              "value": "STK",
+              "synonyms": [
+                "stk"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Surfacing",
+          "render": "{value}",
+          "values": [
+            {
+              "value": "S1S2E",
+              "synonyms": [
+                "1s2e",
+                "s1s2e"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    },
+    {
+      "id": "generic_product",
+      "dept": "",
+      "class": "",
+      "fine": "",
+      "classpath": "",
+      "product_name": "Product",
+      "unspsc": "",
+      "is_fallback": true,
+      "strong_keywords": [],
+      "short_desc_attributes": [
+        "Material",
+        "Size",
+        "Color"
+      ],
+      "invoice_attributes": [
+        "Size",
+        "Color"
+      ],
+      "attributes": [
+        {
+          "label": "Product Type",
+          "render": "{value}"
+        },
+        {
+          "label": "Size",
+          "render": "{value}"
+        },
+        {
+          "label": "Material",
+          "render": "{value}",
+          "values": [
+            {
+              "value": "Stainless Steel",
+              "synonyms": [
+                "ss",
+                "sst",
+                "stainless"
+              ]
+            },
+            {
+              "value": "Steel",
+              "synonyms": [
+                "steel"
+              ]
+            },
+            {
+              "value": "Aluminum",
+              "synonyms": [
+                "alum",
+                "aluminum"
+              ]
+            },
+            {
+              "value": "PVC",
+              "synonyms": [
+                "pvc"
+              ]
+            },
+            {
+              "value": "Vinyl",
+              "synonyms": [
+                "vinyl"
+              ]
+            },
+            {
+              "value": "Composite",
+              "synonyms": [
+                "composite"
+              ]
+            },
+            {
+              "value": "Plastic",
+              "synonyms": [
+                "plastic"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Color",
+          "render": "{value}"
+        },
+        {
+          "label": "Additional Information",
+          "render": "{value}"
+        }
+      ]
+    }
+  ]
+}

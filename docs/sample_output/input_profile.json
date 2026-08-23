@@ -1,0 +1,192 @@
+{
+  "path": "data\\raw\\sample_1000_input.csv",
+  "row_count": 1000,
+  "column_count": 6,
+  "columns": [
+    {
+      "name": "Mfg_Part_Num",
+      "non_empty": 1000,
+      "placeholder": 0,
+      "effective_values": 1000,
+      "fill_rate": 1.0,
+      "unique": 999,
+      "max_length": 17,
+      "inferred_type": "text",
+      "top_values": [
+        {
+          "value": "AVM6EV",
+          "count": 2
+        },
+        {
+          "value": "DCB518ASTS06G",
+          "count": 1
+        },
+        {
+          "value": "3MABR-7100075678",
+          "count": 1
+        },
+        {
+          "value": "3MABR-7100045865",
+          "count": 1
+        },
+        {
+          "value": "3MABR-7100048736",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Part_Desc",
+      "non_empty": 1000,
+      "placeholder": 0,
+      "effective_values": 1000,
+      "fill_rate": 1.0,
+      "unique": 998,
+      "max_length": 70,
+      "inferred_type": "text",
+      "top_values": [
+        {
+          "value": "4x4 1G Box Cover",
+          "count": 3
+        },
+        {
+          "value": "DCB518ASTS06G Diablo 1/2\"x18\" - Sanding Belt 6pc",
+          "count": 1
+        },
+        {
+          "value": "3M 775L Stikit Film P150 - Cubitron II 50 Disc/Box",
+          "count": 1
+        },
+        {
+          "value": "3M 775L Stikit Film P120 - Cubitron II 50 Disc/Box",
+          "count": 1
+        },
+        {
+          "value": "3M 775L Stikit Film P80 - Cubitron II 50 Disc/Box",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "E1_Brand",
+      "non_empty": 1000,
+      "placeholder": 803,
+      "effective_values": 197,
+      "fill_rate": 0.197,
+      "unique": 11,
+      "max_length": 20,
+      "inferred_type": "text",
+      "top_values": [
+        {
+          "value": "TREX",
+          "count": 122
+        },
+        {
+          "value": "TIMBERTECH",
+          "count": 55
+        },
+        {
+          "value": "United Window & Door",
+          "count": 5
+        },
+        {
+          "value": "LP SMARTSIDE",
+          "count": 4
+        },
+        {
+          "value": "DSI Westbury",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "Unilog_Brand",
+      "non_empty": 1000,
+      "placeholder": 1000,
+      "effective_values": 0,
+      "fill_rate": 0.0,
+      "unique": 0,
+      "max_length": 0,
+      "inferred_type": "empty",
+      "top_values": []
+    },
+    {
+      "name": "DIB_Brand",
+      "non_empty": 1000,
+      "placeholder": 755,
+      "effective_values": 245,
+      "fill_rate": 0.245,
+      "unique": 23,
+      "max_length": 15,
+      "inferred_type": "text",
+      "top_values": [
+        {
+          "value": "Philips",
+          "count": 109
+        },
+        {
+          "value": "Diablo",
+          "count": 30
+        },
+        {
+          "value": "DEWALT",
+          "count": 28
+        },
+        {
+          "value": "Leviton",
+          "count": 16
+        },
+        {
+          "value": "Satco",
+          "count": 15
+        }
+      ]
+    },
+    {
+      "name": "Part_Manuf",
+      "non_empty": 1000,
+      "placeholder": 41,
+      "effective_values": 959,
+      "fill_rate": 0.959,
+      "unique": 75,
+      "max_length": 42,
+      "inferred_type": "text",
+      "top_values": [
+        {
+          "value": "Phillips Lighting (5831)",
+          "count": 111
+        },
+        {
+          "value": "Milwaukee Accessory (4031)",
+          "count": 108
+        },
+        {
+          "value": "Boise Cascade Building Materials (BOICA)",
+          "count": 85
+        },
+        {
+          "value": "Appliance Dealers Cooperative (APPDE)",
+          "count": 84
+        },
+        {
+          "value": "Kichler Lighting (KICLI)",
+          "count": 56
+        }
+      ]
+    }
+  ],
+  "duplicate_rows": 0,
+  "duplicate_part_numbers": [
+    {
+      "value": "AVM6EV",
+      "count": 2
+    }
+  ],
+  "encoding_issues": 0,
+  "warnings": [
+    "1 part number(s) appear more than once",
+    "column 'E1_Brand' is 80% placeholder sentinels",
+    "column 'Unilog_Brand' is 100% placeholder sentinels",
+    "column 'DIB_Brand' is 76% placeholder sentinels"
+  ]
+}

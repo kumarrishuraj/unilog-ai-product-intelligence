@@ -1,0 +1,14 @@
+services:
+  unilog:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      # Drop the official Unilog reference workbooks here and the pipeline
+      # switches from derived to official provenance with no code change.
+      - ./data/reference:/app/data/reference
+      - ./data/processed:/app/data/processed
+      - ./data/uploads:/app/data/uploads
+    restart: unless-stopped

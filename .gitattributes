@@ -1,0 +1,14 @@
+# Normalise line endings so the repo is identical on Windows, macOS and Linux.
+* text=auto eol=lf
+
+# Binary / generated assets must never be munged.
+*.pptx binary
+*.xlsx binary
+*.png  binary
+*.jpg  binary
+*.pdf  binary
+*.ico  binary
+
+# Keep generated lockfiles out of diffs.
+frontend/package-lock.json linguist-generated=true
+docs/sample_output/*       linguist-generated=true

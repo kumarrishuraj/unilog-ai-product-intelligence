@@ -1,0 +1,74 @@
+# ---------------------------------------------------------------------------
+# Secrets — never commit
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+
+# ---------------------------------------------------------------------------
+# Node / frontend
+# ---------------------------------------------------------------------------
+node_modules/
+# build artefact — reproduce with `npm run build`
+frontend/dist/
+.vite/
+npm-debug.log*
+yarn-error.log*
+
+# ---------------------------------------------------------------------------
+# Pipeline output — regenerable, and the products dump is ~15 MB
+# ---------------------------------------------------------------------------
+# A representative sample of the real output is committed under
+# docs/sample_output/ instead, so reviewers can inspect it without a large blob.
+data/processed/
+data/uploads/
+
+# ---------------------------------------------------------------------------
+# Reference workbooks
+# ---------------------------------------------------------------------------
+# The official Unilog reference pack is licensed material and is not ours to
+# redistribute. Drop the workbooks in here locally and the pipeline switches from
+# derived to official provenance with no code change (see README §4).
+data/reference/*
+!data/reference/.gitkeep
+
+# ---------------------------------------------------------------------------
+# Deck working files
+# ---------------------------------------------------------------------------
+# PNG renders used only to visually validate the deck
+docs/deck_render/
+*.pptx
+# the completed submission deck is the exception
+!UniHack_Unilog_Product_Intelligence.pptx
+
+# ---------------------------------------------------------------------------
+# Editor / OS
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini

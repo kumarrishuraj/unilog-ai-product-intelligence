@@ -1,0 +1,2640 @@
+[
+  {
+    "row_index": 16,
+    "raw": {},
+    "cleaned": {
+      "Mfg_Part_Num": "49-94-0013",
+      "Part_Desc": "49-94-0013 Milw 5\"x.045\"x7/8\" Metal Cut Off Disc",
+      "E1_Brand": null,
+      "Unilog_Brand": null,
+      "DIB_Brand": null,
+      "Part_Manuf": "Milwaukee Accessory (4031)"
+    },
+    "placeholders": [
+      "E1_Brand",
+      "Unilog_Brand",
+      "DIB_Brand"
+    ],
+    "parsed": {
+      "mpn": "49-94-0013",
+      "manufacturer_raw": "Milwaukee Accessory (4031)",
+      "brand_raw": "",
+      "product_type": "Cut Off Disc",
+      "category": "",
+      "series": "",
+      "model": "49-94-0013",
+      "dimensions": {
+        "dim_1": "5 in",
+        "dim_2": "0.045 in",
+        "dim_3": "7/8 in"
+      },
+      "materials": [],
+      "technical_specs": {},
+      "features": [],
+      "segments": [
+        "Milw 5\"x.045\"x7/8\" Metal Cut Off Disc"
+      ],
+      "residual_text": "Milw Metal Cut Off Disc",
+      "method": "deterministic",
+      "confidence": 0.51
+    },
+    "mpn": {
+      "value": "49-94-0013",
+      "confidence": 1.0,
+      "band": "HIGH",
+      "method": "input_passthrough",
+      "transformation": "manufacturer part number taken from the feed",
+      "raw": "49-94-0013",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "input_feed:Mfg_Part_Num",
+          "tier": "input_feed",
+          "snippet": "49-94-0013",
+          "url": "",
+          "locator": "",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "manufacturer": {
+      "value": "Milwaukee Accessory",
+      "confidence": 0.85,
+      "band": "HIGH",
+      "method": "brand_owner",
+      "transformation": "'Milwaukee' is owned by 'Milwaukee Accessory' per the brand master",
+      "raw": "Milwaukee Accessory (4031)",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "master_data:manufacturer",
+          "tier": "master_data",
+          "snippet": "Milwaukee Accessory (4031)",
+          "url": "",
+          "locator": "brand_owner",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "manufacturer_code": {
+      "value": "4031",
+      "confidence": 0.85,
+      "band": "HIGH",
+      "method": "brand_owner",
+      "transformation": "manufacturer code from master data",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "brand": {
+      "value": "Milwaukee",
+      "confidence": 0.8,
+      "band": "MEDIUM",
+      "method": "description_mention",
+      "transformation": "brand name 'milw' found in the product description",
+      "raw": "49-94-0013 Milw 5\"x.045\"x7/8\" Metal Cut Off Disc",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "master_data:brand",
+          "tier": "master_data",
+          "snippet": "49-94-0013 Milw 5\"x.045\"x7/8\" Metal Cut Off Disc",
+          "url": "",
+          "locator": "description_mention",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "supplier": {
+      "value": "Milwaukee Accessory",
+      "confidence": 0.9306,
+      "band": "HIGH",
+      "method": "code",
+      "transformation": "supplier code '4031' matched master record",
+      "raw": "Milwaukee Accessory (4031)",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "master_data:manufacturer",
+          "tier": "master_data",
+          "snippet": "Milwaukee Accessory (4031)",
+          "url": "",
+          "locator": "code",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "leaf_id": "cutting_grinding_wheels",
+    "classpath": {
+      "value": "Tools & Hardware>Power Tool Accessories>Cutting & Grinding Wheels",
+      "confidence": 0.97,
+      "band": "HIGH",
+      "method": "keyword",
+      "transformation": "matched: cut off disc, metal cut",
+      "raw": "Milw 5\"x.045\"x7/8\" Metal Cut Off Disc",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "taxonomy:keyword_classifier",
+          "tier": "controlled_vocabulary",
+          "snippet": "Milw 5\"x.045\"x7/8\" Metal Cut Off Disc",
+          "url": "",
+          "locator": "settled deterministically",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "dept": {
+      "value": "Tools",
+      "confidence": 0.97,
+      "band": "HIGH",
+      "method": "keyword",
+      "transformation": "matched: cut off disc, metal cut",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "class": {
+      "value": "Power Tool Accessories",
+      "confidence": 0.97,
+      "band": "HIGH",
+      "method": "keyword",
+      "transformation": "matched: cut off disc, metal cut",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "fine": {
+      "value": "Cutting & Grinding Wheels",
+      "confidence": 0.97,
+      "band": "HIGH",
+      "method": "keyword",
+      "transformation": "matched: cut off disc, metal cut",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "product_name": {
+      "value": "Cut-Off Wheel",
+      "confidence": 0.97,
+      "band": "HIGH",
+      "method": "keyword",
+      "transformation": "product name from the taxonomy leaf",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "taxonomy:keyword_classifier",
+          "tier": "controlled_vocabulary",
+          "snippet": "Milw 5\"x.045\"x7/8\" Metal Cut Off Disc",
+          "url": "",
+          "locator": "settled deterministically",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "unspsc": {
+      "value": "23241600",
+      "confidence": 0.97,
+      "band": "HIGH",
+      "method": "keyword",
+      "transformation": "UNSPSC from the taxonomy leaf",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "classification_candidates": [
+      {
+        "leaf_id": "cutting_grinding_wheels",
+        "classpath": "Tools & Hardware>Power Tool Accessories>Cutting & Grinding Wheels",
+        "score": 20.5,
+        "matched": [
+          "cut off disc",
+          "metal cut"
+        ]
+      }
+    ],
+    "attributes": [
+      {
+        "label": "Wheel Type",
+        "value": "Cut-Off Wheel",
+        "uom": null,
+        "raw": "Cut Off Disc",
+        "confidence": 0.94,
+        "band": "HIGH",
+        "method": "lov_synonym",
+        "lov_compliant": true,
+        "transformation": "LOV synonym 'Cut Off Disc' -> 'Cut-Off Wheel'",
+        "evidence": [
+          {
+            "source": "input_feed:Part_Desc",
+            "tier": "controlled_vocabulary",
+            "snippet": "Cut Off Disc",
+            "url": "",
+            "locator": "Wheel Type",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      {
+        "label": "Diameter",
+        "value": "5",
+        "uom": "in",
+        "raw": "5",
+        "confidence": 0.82,
+        "band": "MEDIUM",
+        "method": "dimension_chain",
+        "lov_compliant": null,
+        "transformation": "extracted by dimension_chain",
+        "evidence": [
+          {
+            "source": "input_feed:Part_Desc",
+            "tier": "deterministic_transform",
+            "snippet": "5",
+            "url": "",
+            "locator": "Diameter",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      {
+        "label": "Thickness",
+        "value": "0.045",
+        "uom": "in",
+        "raw": "0.045",
+        "confidence": 0.82,
+        "band": "MEDIUM",
+        "method": "dimension_chain",
+        "lov_compliant": null,
+        "transformation": "extracted by dimension_chain",
+        "evidence": [
+          {
+            "source": "input_feed:Part_Desc",
+            "tier": "deterministic_transform",
+            "snippet": "0.045",
+            "url": "",
+            "locator": "Thickness",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      {
+        "label": "Arbor Size",
+        "value": "7/8",
+        "uom": "in",
+        "raw": "7/8",
+        "confidence": 0.82,
+        "band": "MEDIUM",
+        "method": "dimension_chain",
+        "lov_compliant": null,
+        "transformation": "extracted by dimension_chain",
+        "evidence": [
+          {
+            "source": "input_feed:Part_Desc",
+            "tier": "deterministic_transform",
+            "snippet": "7/8",
+            "url": "",
+            "locator": "Arbor Size",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      {
+        "label": "Application",
+        "value": "Metal",
+        "uom": null,
+        "raw": "Metal",
+        "confidence": 0.96,
+        "band": "HIGH",
+        "method": "lov_exact",
+        "lov_compliant": true,
+        "transformation": "matched approved LOV value",
+        "evidence": [
+          {
+            "source": "input_feed:Part_Desc",
+            "tier": "controlled_vocabulary",
+            "snippet": "Metal",
+            "url": "",
+            "locator": "Application",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      {
+        "label": "Quantity per Package",
+        "value": null,
+        "uom": null,
+        "raw": null,
+        "confidence": 0.0,
+        "band": "UNKNOWN",
+        "method": "not_found",
+        "lov_compliant": null,
+        "transformation": "",
+        "evidence": []
+      },
+      {
+        "label": "Additional Information",
+        "value": null,
+        "uom": null,
+        "raw": null,
+        "confidence": 0.0,
+        "band": "UNKNOWN",
+        "method": "not_found",
+        "lov_compliant": null,
+        "transformation": "",
+        "evidence": []
+      }
+    ],
+    "descriptions": {
+      "LONG_DESC1": {
+        "value": "Milwaukee Cut-Off Wheel, 5 in Diameter, 0.045 in Thickness, 7/8 in Arbor Size, For Metal",
+        "confidence": 0.9168,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 5 verified attributes on leaf 'cutting_grinding_wheels'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "5 verified attributes",
+            "url": "",
+            "locator": "cutting_grinding_wheels",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "SHORT_DESC": {
+        "value": "Milwaukee 49-94-0013 Cut-Off Wheel, 5 in Diameter, 0.045 in Thickness, 7/8 in Arbor Size, For Metal",
+        "confidence": 0.9168,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 5 verified attributes on leaf 'cutting_grinding_wheels'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "5 verified attributes",
+            "url": "",
+            "locator": "cutting_grinding_wheels",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "RETAIL_DESC": {
+        "value": "Cut-Off Wheel, 5 in Diameter, 0.045 in Thickness, 7/8 in Arbor Size, For Metal",
+        "confidence": 0.9168,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 5 verified attributes on leaf 'cutting_grinding_wheels'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "5 verified attributes",
+            "url": "",
+            "locator": "cutting_grinding_wheels",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "MOBILE_DESC": {
+        "value": "Milwaukee, Cut-Off Wheel, 49-94-0013, 5 in Diameter, 0.045 in Thickness",
+        "confidence": 0.9168,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 5 verified attributes on leaf 'cutting_grinding_wheels'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "5 verified attributes",
+            "url": "",
+            "locator": "cutting_grinding_wheels",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "INVOICE_DESC": {
+        "value": "CUTOFF WHL 5IN 0.045IN 7/8IN",
+        "confidence": 0.9168,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 5 verified attributes on leaf 'cutting_grinding_wheels'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "5 verified attributes",
+            "url": "",
+            "locator": "cutting_grinding_wheels",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "MARKETING_DESCRIPTION": {
+        "value": null,
+        "confidence": 0.0,
+        "band": "UNKNOWN",
+        "method": "none",
+        "transformation": "",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [
+          "no manufacturer marketing copy retrieved; left blank rather than invented"
+        ],
+        "evidence": []
+      }
+    },
+    "features": [],
+    "with_clause": {
+      "value": null,
+      "confidence": 0.0,
+      "band": "UNKNOWN",
+      "method": "none",
+      "transformation": "",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "approvals": {
+      "value": null,
+      "confidence": 0.0,
+      "band": "UNKNOWN",
+      "method": "none",
+      "transformation": "",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "urls": {},
+    "assets": {},
+    "issues": [],
+    "review_flags": [],
+    "confidence": 0.8274,
+    "confidence_band": "MEDIUM",
+    "confidence_breakdown": {
+      "manufacturer": 0.85,
+      "brand": 0.8,
+      "classification": 0.97,
+      "attributes": 0.735,
+      "descriptions": 0.9168,
+      "evidence": 0.5556
+    },
+    "status": "SUCCESS",
+    "stage_log": [
+      {
+        "stage": "cleaning",
+        "detail": "3 placeholder field(s) neutralised",
+        "placeholders": [
+          "E1_Brand",
+          "Unilog_Brand",
+          "DIB_Brand"
+        ]
+      },
+      {
+        "stage": "entity_resolution",
+        "detail": "supplier=Milwaukee Accessory; brand=Milwaukee; manufacturer=Milwaukee Accessory"
+      },
+      {
+        "stage": "product_parsing",
+        "detail": "type='Cut Off Disc' materials=[] specs=[] via deterministic"
+      },
+      {
+        "stage": "classification",
+        "detail": "leaf=cutting_grinding_wheels confidence=0.97 (matched: cut off disc, metal cut); settled deterministically"
+      },
+      {
+        "stage": "manufacturer_research",
+        "detail": "manufacturer research disabled (set RESEARCH_ENABLED=true and a SEARCH_API_KEY)"
+      },
+      {
+        "stage": "attribute_extraction",
+        "detail": "5/7 slots populated"
+      },
+      {
+        "stage": "description_generation",
+        "detail": "5 fields composed"
+      },
+      {
+        "stage": "digital_assets",
+        "detail": "0 confirmed; 1 predicted but unconfirmed (not published)"
+      },
+      {
+        "stage": "validation",
+        "detail": "39/39 checks passed; 0 error(s) after 1 pass(es)"
+      }
+    ],
+    "error": null
+  },
+  {
+    "row_index": 0,
+    "raw": {},
+    "cleaned": {
+      "Mfg_Part_Num": "DCB518ASTS06G",
+      "Part_Desc": "DCB518ASTS06G Diablo 1/2\"x18\" - Sanding Belt 6pc",
+      "E1_Brand": null,
+      "Unilog_Brand": null,
+      "DIB_Brand": null,
+      "Part_Manuf": "Freud Inc (2435)"
+    },
+    "placeholders": [
+      "E1_Brand",
+      "Unilog_Brand",
+      "DIB_Brand"
+    ],
+    "parsed": {
+      "mpn": "DCB518ASTS06G",
+      "manufacturer_raw": "Freud Inc (2435)",
+      "brand_raw": "",
+      "product_type": "Diablo",
+      "category": "",
+      "series": "",
+      "model": "DCB518ASTS06G",
+      "dimensions": {
+        "dim_1": "1/2 in",
+        "dim_2": "18 in"
+      },
+      "materials": [],
+      "technical_specs": {
+        "Count": "6 pc",
+        "Package Quantity": "6"
+      },
+      "features": [
+        "Sanding Belt 6pc"
+      ],
+      "segments": [
+        "Diablo 1/2\"x18\"",
+        "Sanding Belt 6pc"
+      ],
+      "residual_text": "Diablo - Sanding Belt",
+      "method": "deterministic",
+      "confidence": 0.77
+    },
+    "mpn": {
+      "value": "DCB518ASTS06G",
+      "confidence": 1.0,
+      "band": "HIGH",
+      "method": "input_passthrough",
+      "transformation": "manufacturer part number taken from the feed",
+      "raw": "DCB518ASTS06G",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "input_feed:Mfg_Part_Num",
+          "tier": "input_feed",
+          "snippet": "DCB518ASTS06G",
+          "url": "",
+          "locator": "",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "manufacturer": {
+      "value": "Freud Inc",
+      "confidence": 0.85,
+      "band": "HIGH",
+      "method": "brand_owner",
+      "transformation": "'Diablo' is owned by 'Freud Inc' per the brand master",
+      "raw": "Freud Inc (2435)",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "master_data:manufacturer",
+          "tier": "master_data",
+          "snippet": "Freud Inc (2435)",
+          "url": "",
+          "locator": "brand_owner",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "manufacturer_code": {
+      "value": "2435",
+      "confidence": 0.85,
+      "band": "HIGH",
+      "method": "brand_owner",
+      "transformation": "manufacturer code from master data",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "brand": {
+      "value": "Diablo",
+      "confidence": 0.8,
+      "band": "MEDIUM",
+      "method": "description_mention",
+      "transformation": "brand name 'diablo' found in the product description",
+      "raw": "DCB518ASTS06G Diablo 1/2\"x18\" - Sanding Belt 6pc",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "master_data:brand",
+          "tier": "master_data",
+          "snippet": "DCB518ASTS06G Diablo 1/2\"x18\" - Sanding Belt 6pc",
+          "url": "",
+          "locator": "description_mention",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "supplier": {
+      "value": "Freud Inc",
+      "confidence": 0.9306,
+      "band": "HIGH",
+      "method": "code",
+      "transformation": "supplier code '2435' matched master record",
+      "raw": "Freud Inc (2435)",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "master_data:manufacturer",
+          "tier": "master_data",
+          "snippet": "Freud Inc (2435)",
+          "url": "",
+          "locator": "code",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "leaf_id": "abrasive_discs",
+    "classpath": {
+      "value": "Tools & Hardware>Power Tool Accessories>Abrasives",
+      "confidence": 0.7937,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "matched: sanding belt",
+      "raw": "Diablo 1/2\"x18\" - Sanding Belt 6pc",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "taxonomy:keyword_classifier",
+          "tier": "controlled_vocabulary",
+          "snippet": "Diablo 1/2\"x18\" - Sanding Belt 6pc",
+          "url": "",
+          "locator": "settled deterministically",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "dept": {
+      "value": "Tools",
+      "confidence": 0.7937,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "matched: sanding belt",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "class": {
+      "value": "Power Tool Accessories",
+      "confidence": 0.7937,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "matched: sanding belt",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "fine": {
+      "value": "Abrasives",
+      "confidence": 0.7937,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "matched: sanding belt",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "product_name": {
+      "value": "Abrasive",
+      "confidence": 0.7937,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "product name from the taxonomy leaf",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "taxonomy:keyword_classifier",
+          "tier": "controlled_vocabulary",
+          "snippet": "Diablo 1/2\"x18\" - Sanding Belt 6pc",
+          "url": "",
+          "locator": "settled deterministically",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "unspsc": {
+      "value": "31191500",
+      "confidence": 0.7937,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "UNSPSC from the taxonomy leaf",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "classification_candidates": [
+      {
+        "leaf_id": "abrasive_discs",
+        "classpath": "Tools & Hardware>Power Tool Accessories>Abrasives",
+        "score": 10.0,
+        "matched": [
+          "sanding belt"
+        ]
+      }
+    ],
+    "attributes": [
+      {
+        "label": "Abrasive Type",
+        "value": "Sanding Belt",
+        "uom": null,
+        "raw": "Sanding Belt",
+        "confidence": 0.96,
+        "band": "HIGH",
+        "method": "lov_exact",
+        "lov_compliant": true,
+        "transformation": "matched approved LOV value",
+        "evidence": [
+          {
+            "source": "input_feed:Part_Desc",
+            "tier": "controlled_vocabulary",
+            "snippet": "Sanding Belt",
+            "url": "",
+            "locator": "Abrasive Type",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      {
+        "label": "Grit",
+        "value": null,
+        "uom": null,
+        "raw": null,
+        "confidence": 0.0,
+        "band": "UNKNOWN",
+        "method": "not_found",
+        "lov_compliant": null,
+        "transformation": "",
+        "evidence": []
+      },
+      {
+        "label": "Size",
+        "value": null,
+        "uom": null,
+        "raw": null,
+        "confidence": 0.0,
+        "band": "UNKNOWN",
+        "method": "not_found",
+        "lov_compliant": null,
+        "transformation": "",
+        "evidence": []
+      },
+      {
+        "label": "Quantity per Package",
+        "value": "6",
+        "uom": null,
+        "raw": "6pc",
+        "confidence": 0.88,
+        "band": "HIGH",
+        "method": "regex",
+        "lov_compliant": null,
+        "transformation": "extracted by regex",
+        "evidence": [
+          {
+            "source": "input_feed:Part_Desc",
+            "tier": "deterministic_transform",
+            "snippet": "6pc",
+            "url": "",
+            "locator": "Quantity per Package",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      {
+        "label": "Additional Information",
+        "value": null,
+        "uom": null,
+        "raw": null,
+        "confidence": 0.0,
+        "band": "UNKNOWN",
+        "method": "not_found",
+        "lov_compliant": null,
+        "transformation": "",
+        "evidence": []
+      }
+    ],
+    "descriptions": {
+      "LONG_DESC1": {
+        "value": "Diablo Abrasive, Sanding Belt, 6 per Package",
+        "confidence": 0.948,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 2 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "2 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "SHORT_DESC": {
+        "value": "Diablo DCB518ASTS06G Abrasive, Sanding Belt, 6-per Package",
+        "confidence": 0.948,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 2 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "2 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "RETAIL_DESC": {
+        "value": "Abrasive, Sanding Belt, 6-per Package",
+        "confidence": 0.948,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 2 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "2 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "MOBILE_DESC": {
+        "value": "Freud Inc Diablo, Abrasive, DCB518ASTS06G, Sanding Belt, 6 per Package",
+        "confidence": 0.948,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 2 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "2 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "INVOICE_DESC": {
+        "value": "ABRASIVE SND BELT",
+        "confidence": 0.948,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 2 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "2 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "MARKETING_DESCRIPTION": {
+        "value": null,
+        "confidence": 0.0,
+        "band": "UNKNOWN",
+        "method": "none",
+        "transformation": "",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [
+          "no manufacturer marketing copy retrieved; left blank rather than invented"
+        ],
+        "evidence": []
+      }
+    },
+    "features": [],
+    "with_clause": {
+      "value": null,
+      "confidence": 0.0,
+      "band": "UNKNOWN",
+      "method": "none",
+      "transformation": "",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "approvals": {
+      "value": null,
+      "confidence": 0.0,
+      "band": "UNKNOWN",
+      "method": "none",
+      "transformation": "",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "urls": {},
+    "assets": {},
+    "issues": [],
+    "review_flags": [],
+    "confidence": 0.771,
+    "confidence_band": "MEDIUM",
+    "confidence_breakdown": {
+      "manufacturer": 0.85,
+      "brand": 0.8,
+      "classification": 0.7937,
+      "attributes": 0.6164,
+      "descriptions": 0.948,
+      "evidence": 0.6667
+    },
+    "status": "SUCCESS",
+    "stage_log": [
+      {
+        "stage": "cleaning",
+        "detail": "3 placeholder field(s) neutralised",
+        "placeholders": [
+          "E1_Brand",
+          "Unilog_Brand",
+          "DIB_Brand"
+        ]
+      },
+      {
+        "stage": "entity_resolution",
+        "detail": "supplier=Freud Inc; brand=Diablo; manufacturer=Freud Inc"
+      },
+      {
+        "stage": "product_parsing",
+        "detail": "type='Diablo' materials=[] specs=['Count', 'Package Quantity'] via deterministic"
+      },
+      {
+        "stage": "classification",
+        "detail": "leaf=abrasive_discs confidence=0.79 (matched: sanding belt); settled deterministically"
+      },
+      {
+        "stage": "manufacturer_research",
+        "detail": "manufacturer research disabled (set RESEARCH_ENABLED=true and a SEARCH_API_KEY)"
+      },
+      {
+        "stage": "attribute_extraction",
+        "detail": "2/5 slots populated"
+      },
+      {
+        "stage": "description_generation",
+        "detail": "5 fields composed"
+      },
+      {
+        "stage": "digital_assets",
+        "detail": "0 confirmed; 1 predicted but unconfirmed (not published)"
+      },
+      {
+        "stage": "validation",
+        "detail": "32/32 checks passed; 0 error(s) after 1 pass(es)"
+      }
+    ],
+    "error": null
+  },
+  {
+    "row_index": 1,
+    "raw": {},
+    "cleaned": {
+      "Mfg_Part_Num": "3MABR-7100075678",
+      "Part_Desc": "3M 775L Stikit Film P150 - Cubitron II 50 Disc/Box",
+      "E1_Brand": null,
+      "Unilog_Brand": null,
+      "DIB_Brand": null,
+      "Part_Manuf": "Jam Industrial Supply LLC (JAMIN)"
+    },
+    "placeholders": [
+      "E1_Brand",
+      "Unilog_Brand",
+      "DIB_Brand"
+    ],
+    "parsed": {
+      "mpn": "3MABR-7100075678",
+      "manufacturer_raw": "Jam Industrial Supply LLC (JAMIN)",
+      "brand_raw": "",
+      "product_type": "Stikit Film P150",
+      "category": "",
+      "series": "",
+      "model": "3MABR-7100075678",
+      "dimensions": {
+        "dim_1": "3 m"
+      },
+      "materials": [],
+      "technical_specs": {
+        "Volume": "775 L",
+        "Package Quantity": "50"
+      },
+      "features": [
+        "Cubitron II 50 Disc/Box"
+      ],
+      "segments": [
+        "3M 775L Stikit Film P150",
+        "Cubitron II 50 Disc/Box"
+      ],
+      "residual_text": "Stikit Film P150 - Cubitron II /Box",
+      "method": "deterministic",
+      "confidence": 0.77
+    },
+    "mpn": {
+      "value": "3MABR-7100075678",
+      "confidence": 1.0,
+      "band": "HIGH",
+      "method": "input_passthrough",
+      "transformation": "manufacturer part number taken from the feed",
+      "raw": "3MABR-7100075678",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "input_feed:Mfg_Part_Num",
+          "tier": "input_feed",
+          "snippet": "3MABR-7100075678",
+          "url": "",
+          "locator": "",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "manufacturer": {
+      "value": "3 M Co",
+      "confidence": 0.85,
+      "band": "HIGH",
+      "method": "brand_owner",
+      "transformation": "'3M' is owned by '3 M Co' per the brand master",
+      "raw": "Jam Industrial Supply LLC (JAMIN)",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "master_data:manufacturer",
+          "tier": "master_data",
+          "snippet": "Jam Industrial Supply LLC (JAMIN)",
+          "url": "",
+          "locator": "brand_owner",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "manufacturer_code": {
+      "value": "5293",
+      "confidence": 0.85,
+      "band": "HIGH",
+      "method": "brand_owner",
+      "transformation": "manufacturer code from master data",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "brand": {
+      "value": "3M",
+      "confidence": 0.8,
+      "band": "MEDIUM",
+      "method": "description_mention",
+      "transformation": "brand name 'stikit' found in the product description",
+      "raw": "3M 775L Stikit Film P150 - Cubitron II 50 Disc/Box",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "master_data:brand",
+          "tier": "master_data",
+          "snippet": "3M 775L Stikit Film P150 - Cubitron II 50 Disc/Box",
+          "url": "",
+          "locator": "description_mention",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "supplier": {
+      "value": "Jam Industrial Supply LLC",
+      "confidence": 0.9306,
+      "band": "HIGH",
+      "method": "code",
+      "transformation": "supplier code 'JAMIN' matched master record",
+      "raw": "Jam Industrial Supply LLC (JAMIN)",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "master_data:manufacturer",
+          "tier": "master_data",
+          "snippet": "Jam Industrial Supply LLC (JAMIN)",
+          "url": "",
+          "locator": "code",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "leaf_id": "abrasive_discs",
+    "classpath": {
+      "value": "Tools & Hardware>Power Tool Accessories>Abrasives",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "matched: stikit, disc/box",
+      "raw": "3M 775L Stikit Film P150 - Cubitron II 50 Disc/Box",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "taxonomy:keyword_classifier",
+          "tier": "controlled_vocabulary",
+          "snippet": "3M 775L Stikit Film P150 - Cubitron II 50 Disc/Box",
+          "url": "",
+          "locator": "settled deterministically",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "dept": {
+      "value": "Tools",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "matched: stikit, disc/box",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "class": {
+      "value": "Power Tool Accessories",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "matched: stikit, disc/box",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "fine": {
+      "value": "Abrasives",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "matched: stikit, disc/box",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "product_name": {
+      "value": "Abrasive",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "product name from the taxonomy leaf",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "taxonomy:keyword_classifier",
+          "tier": "controlled_vocabulary",
+          "snippet": "3M 775L Stikit Film P150 - Cubitron II 50 Disc/Box",
+          "url": "",
+          "locator": "settled deterministically",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "unspsc": {
+      "value": "31191500",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "UNSPSC from the taxonomy leaf",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "classification_candidates": [
+      {
+        "leaf_id": "abrasive_discs",
+        "classpath": "Tools & Hardware>Power Tool Accessories>Abrasives",
+        "score": 13.5,
+        "matched": [
+          "stikit",
+          "disc/box"
+        ]
+      },
+      {
+        "leaf_id": "electrical_boxes",
+        "classpath": "Electrical>Boxes, Conduit & Fittings>Electrical Boxes & Covers",
+        "score": 3.0,
+        "matched": [
+          "box"
+        ]
+      }
+    ],
+    "attributes": [
+      {
+        "label": "Abrasive Type",
+        "value": "Sanding Disc",
+        "uom": null,
+        "raw": "Disc",
+        "confidence": 0.94,
+        "band": "HIGH",
+        "method": "lov_synonym",
+        "lov_compliant": true,
+        "transformation": "LOV synonym 'Disc' -> 'Sanding Disc'",
+        "evidence": [
+          {
+            "source": "input_feed:Part_Desc",
+            "tier": "controlled_vocabulary",
+            "snippet": "Disc",
+            "url": "",
+            "locator": "Abrasive Type",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      {
+        "label": "Grit",
+        "value": "150",
+        "uom": null,
+        "raw": "P150",
+        "confidence": 0.88,
+        "band": "HIGH",
+        "method": "regex",
+        "lov_compliant": null,
+        "transformation": "extracted by regex",
+        "evidence": [
+          {
+            "source": "input_feed:Part_Desc",
+            "tier": "deterministic_transform",
+            "snippet": "P150",
+            "url": "",
+            "locator": "Grit",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      {
+        "label": "Size",
+        "value": null,
+        "uom": null,
+        "raw": null,
+        "confidence": 0.0,
+        "band": "UNKNOWN",
+        "method": "not_found",
+        "lov_compliant": null,
+        "transformation": "",
+        "evidence": []
+      },
+      {
+        "label": "Quantity per Package",
+        "value": "50",
+        "uom": null,
+        "raw": "50 Disc",
+        "confidence": 0.88,
+        "band": "HIGH",
+        "method": "regex",
+        "lov_compliant": null,
+        "transformation": "extracted by regex",
+        "evidence": [
+          {
+            "source": "input_feed:Part_Desc",
+            "tier": "deterministic_transform",
+            "snippet": "50 Disc",
+            "url": "",
+            "locator": "Quantity per Package",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      {
+        "label": "Additional Information",
+        "value": null,
+        "uom": null,
+        "raw": null,
+        "confidence": 0.0,
+        "band": "UNKNOWN",
+        "method": "not_found",
+        "lov_compliant": null,
+        "transformation": "",
+        "evidence": []
+      }
+    ],
+    "descriptions": {
+      "LONG_DESC1": {
+        "value": "3M Abrasive, Sanding Disc, 150 Grit, 50 per Package",
+        "confidence": 0.935,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 3 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "3 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "SHORT_DESC": {
+        "value": "3M 3MABR-7100075678 Abrasive, Sanding Disc, 150-Grit, 50-per Package",
+        "confidence": 0.935,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 3 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "3 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "RETAIL_DESC": {
+        "value": "Abrasive, Sanding Disc, 150-Grit, 50-per Package",
+        "confidence": 0.935,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 3 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "3 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "MOBILE_DESC": {
+        "value": "3 M Co 3M, Abrasive, 3MABR-7100075678, Sanding Disc, 150 Grit, 50 per Package",
+        "confidence": 0.935,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 3 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "3 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "INVOICE_DESC": {
+        "value": "ABRASIVE SND DISC 150",
+        "confidence": 0.935,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 3 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "3 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "MARKETING_DESCRIPTION": {
+        "value": null,
+        "confidence": 0.0,
+        "band": "UNKNOWN",
+        "method": "none",
+        "transformation": "",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [
+          "no manufacturer marketing copy retrieved; left blank rather than invented"
+        ],
+        "evidence": []
+      }
+    },
+    "features": [],
+    "with_clause": {
+      "value": null,
+      "confidence": 0.0,
+      "band": "UNKNOWN",
+      "method": "none",
+      "transformation": "",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "approvals": {
+      "value": null,
+      "confidence": 0.0,
+      "band": "UNKNOWN",
+      "method": "none",
+      "transformation": "",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "urls": {},
+    "assets": {},
+    "issues": [],
+    "review_flags": [],
+    "confidence": 0.7958,
+    "confidence_band": "MEDIUM",
+    "confidence_breakdown": {
+      "manufacturer": 0.85,
+      "brand": 0.8,
+      "classification": 0.8491,
+      "attributes": 0.702,
+      "descriptions": 0.935,
+      "evidence": 0.5714
+    },
+    "status": "SUCCESS",
+    "stage_log": [
+      {
+        "stage": "cleaning",
+        "detail": "3 placeholder field(s) neutralised",
+        "placeholders": [
+          "E1_Brand",
+          "Unilog_Brand",
+          "DIB_Brand"
+        ]
+      },
+      {
+        "stage": "entity_resolution",
+        "detail": "supplier=Jam Industrial Supply LLC; brand=3M; manufacturer=3 M Co"
+      },
+      {
+        "stage": "product_parsing",
+        "detail": "type='Stikit Film P150' materials=[] specs=['Volume', 'Package Quantity'] via deterministic"
+      },
+      {
+        "stage": "classification",
+        "detail": "leaf=abrasive_discs confidence=0.85 (matched: stikit, disc/box); settled deterministically"
+      },
+      {
+        "stage": "manufacturer_research",
+        "detail": "manufacturer research disabled (set RESEARCH_ENABLED=true and a SEARCH_API_KEY)"
+      },
+      {
+        "stage": "attribute_extraction",
+        "detail": "3/5 slots populated"
+      },
+      {
+        "stage": "description_generation",
+        "detail": "5 fields composed"
+      },
+      {
+        "stage": "digital_assets",
+        "detail": "0 confirmed; 1 predicted but unconfirmed (not published)"
+      },
+      {
+        "stage": "validation",
+        "detail": "33/33 checks passed; 0 error(s) after 1 pass(es)"
+      }
+    ],
+    "error": null
+  },
+  {
+    "row_index": 2,
+    "raw": {},
+    "cleaned": {
+      "Mfg_Part_Num": "3MABR-7100045865",
+      "Part_Desc": "3M 775L Stikit Film P120 - Cubitron II 50 Disc/Box",
+      "E1_Brand": null,
+      "Unilog_Brand": null,
+      "DIB_Brand": null,
+      "Part_Manuf": "Jam Industrial Supply LLC (JAMIN)"
+    },
+    "placeholders": [
+      "E1_Brand",
+      "Unilog_Brand",
+      "DIB_Brand"
+    ],
+    "parsed": {
+      "mpn": "3MABR-7100045865",
+      "manufacturer_raw": "Jam Industrial Supply LLC (JAMIN)",
+      "brand_raw": "",
+      "product_type": "Stikit Film P120",
+      "category": "",
+      "series": "",
+      "model": "3MABR-7100045865",
+      "dimensions": {
+        "dim_1": "3 m"
+      },
+      "materials": [],
+      "technical_specs": {
+        "Volume": "775 L",
+        "Package Quantity": "50"
+      },
+      "features": [
+        "Cubitron II 50 Disc/Box"
+      ],
+      "segments": [
+        "3M 775L Stikit Film P120",
+        "Cubitron II 50 Disc/Box"
+      ],
+      "residual_text": "Stikit Film P120 - Cubitron II /Box",
+      "method": "deterministic",
+      "confidence": 0.77
+    },
+    "mpn": {
+      "value": "3MABR-7100045865",
+      "confidence": 1.0,
+      "band": "HIGH",
+      "method": "input_passthrough",
+      "transformation": "manufacturer part number taken from the feed",
+      "raw": "3MABR-7100045865",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "input_feed:Mfg_Part_Num",
+          "tier": "input_feed",
+          "snippet": "3MABR-7100045865",
+          "url": "",
+          "locator": "",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "manufacturer": {
+      "value": "3 M Co",
+      "confidence": 0.85,
+      "band": "HIGH",
+      "method": "brand_owner",
+      "transformation": "'3M' is owned by '3 M Co' per the brand master",
+      "raw": "Jam Industrial Supply LLC (JAMIN)",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "master_data:manufacturer",
+          "tier": "master_data",
+          "snippet": "Jam Industrial Supply LLC (JAMIN)",
+          "url": "",
+          "locator": "brand_owner",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "manufacturer_code": {
+      "value": "5293",
+      "confidence": 0.85,
+      "band": "HIGH",
+      "method": "brand_owner",
+      "transformation": "manufacturer code from master data",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "brand": {
+      "value": "3M",
+      "confidence": 0.8,
+      "band": "MEDIUM",
+      "method": "description_mention",
+      "transformation": "brand name 'stikit' found in the product description",
+      "raw": "3M 775L Stikit Film P120 - Cubitron II 50 Disc/Box",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "master_data:brand",
+          "tier": "master_data",
+          "snippet": "3M 775L Stikit Film P120 - Cubitron II 50 Disc/Box",
+          "url": "",
+          "locator": "description_mention",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "supplier": {
+      "value": "Jam Industrial Supply LLC",
+      "confidence": 0.9306,
+      "band": "HIGH",
+      "method": "code",
+      "transformation": "supplier code 'JAMIN' matched master record",
+      "raw": "Jam Industrial Supply LLC (JAMIN)",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "master_data:manufacturer",
+          "tier": "master_data",
+          "snippet": "Jam Industrial Supply LLC (JAMIN)",
+          "url": "",
+          "locator": "code",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "leaf_id": "abrasive_discs",
+    "classpath": {
+      "value": "Tools & Hardware>Power Tool Accessories>Abrasives",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "matched: stikit, disc/box",
+      "raw": "3M 775L Stikit Film P120 - Cubitron II 50 Disc/Box",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "taxonomy:keyword_classifier",
+          "tier": "controlled_vocabulary",
+          "snippet": "3M 775L Stikit Film P120 - Cubitron II 50 Disc/Box",
+          "url": "",
+          "locator": "settled deterministically",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "dept": {
+      "value": "Tools",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "matched: stikit, disc/box",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "class": {
+      "value": "Power Tool Accessories",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "matched: stikit, disc/box",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "fine": {
+      "value": "Abrasives",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "matched: stikit, disc/box",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "product_name": {
+      "value": "Abrasive",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "product name from the taxonomy leaf",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "taxonomy:keyword_classifier",
+          "tier": "controlled_vocabulary",
+          "snippet": "3M 775L Stikit Film P120 - Cubitron II 50 Disc/Box",
+          "url": "",
+          "locator": "settled deterministically",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "unspsc": {
+      "value": "31191500",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "UNSPSC from the taxonomy leaf",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "classification_candidates": [
+      {
+        "leaf_id": "abrasive_discs",
+        "classpath": "Tools & Hardware>Power Tool Accessories>Abrasives",
+        "score": 13.5,
+        "matched": [
+          "stikit",
+          "disc/box"
+        ]
+      },
+      {
+        "leaf_id": "electrical_boxes",
+        "classpath": "Electrical>Boxes, Conduit & Fittings>Electrical Boxes & Covers",
+        "score": 3.0,
+        "matched": [
+          "box"
+        ]
+      }
+    ],
+    "attributes": [
+      {
+        "label": "Abrasive Type",
+        "value": "Sanding Disc",
+        "uom": null,
+        "raw": "Disc",
+        "confidence": 0.94,
+        "band": "HIGH",
+        "method": "lov_synonym",
+        "lov_compliant": true,
+        "transformation": "LOV synonym 'Disc' -> 'Sanding Disc'",
+        "evidence": [
+          {
+            "source": "input_feed:Part_Desc",
+            "tier": "controlled_vocabulary",
+            "snippet": "Disc",
+            "url": "",
+            "locator": "Abrasive Type",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      {
+        "label": "Grit",
+        "value": "120",
+        "uom": null,
+        "raw": "P120",
+        "confidence": 0.88,
+        "band": "HIGH",
+        "method": "regex",
+        "lov_compliant": null,
+        "transformation": "extracted by regex",
+        "evidence": [
+          {
+            "source": "input_feed:Part_Desc",
+            "tier": "deterministic_transform",
+            "snippet": "P120",
+            "url": "",
+            "locator": "Grit",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      {
+        "label": "Size",
+        "value": null,
+        "uom": null,
+        "raw": null,
+        "confidence": 0.0,
+        "band": "UNKNOWN",
+        "method": "not_found",
+        "lov_compliant": null,
+        "transformation": "",
+        "evidence": []
+      },
+      {
+        "label": "Quantity per Package",
+        "value": "50",
+        "uom": null,
+        "raw": "50 Disc",
+        "confidence": 0.88,
+        "band": "HIGH",
+        "method": "regex",
+        "lov_compliant": null,
+        "transformation": "extracted by regex",
+        "evidence": [
+          {
+            "source": "input_feed:Part_Desc",
+            "tier": "deterministic_transform",
+            "snippet": "50 Disc",
+            "url": "",
+            "locator": "Quantity per Package",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      {
+        "label": "Additional Information",
+        "value": null,
+        "uom": null,
+        "raw": null,
+        "confidence": 0.0,
+        "band": "UNKNOWN",
+        "method": "not_found",
+        "lov_compliant": null,
+        "transformation": "",
+        "evidence": []
+      }
+    ],
+    "descriptions": {
+      "LONG_DESC1": {
+        "value": "3M Abrasive, Sanding Disc, 120 Grit, 50 per Package",
+        "confidence": 0.935,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 3 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "3 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "SHORT_DESC": {
+        "value": "3M 3MABR-7100045865 Abrasive, Sanding Disc, 120-Grit, 50-per Package",
+        "confidence": 0.935,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 3 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "3 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "RETAIL_DESC": {
+        "value": "Abrasive, Sanding Disc, 120-Grit, 50-per Package",
+        "confidence": 0.935,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 3 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "3 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "MOBILE_DESC": {
+        "value": "3 M Co 3M, Abrasive, 3MABR-7100045865, Sanding Disc, 120 Grit, 50 per Package",
+        "confidence": 0.935,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 3 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "3 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "INVOICE_DESC": {
+        "value": "ABRASIVE SND DISC 120",
+        "confidence": 0.935,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 3 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "3 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "MARKETING_DESCRIPTION": {
+        "value": null,
+        "confidence": 0.0,
+        "band": "UNKNOWN",
+        "method": "none",
+        "transformation": "",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [
+          "no manufacturer marketing copy retrieved; left blank rather than invented"
+        ],
+        "evidence": []
+      }
+    },
+    "features": [],
+    "with_clause": {
+      "value": null,
+      "confidence": 0.0,
+      "band": "UNKNOWN",
+      "method": "none",
+      "transformation": "",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "approvals": {
+      "value": null,
+      "confidence": 0.0,
+      "band": "UNKNOWN",
+      "method": "none",
+      "transformation": "",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "urls": {},
+    "assets": {},
+    "issues": [],
+    "review_flags": [],
+    "confidence": 0.7958,
+    "confidence_band": "MEDIUM",
+    "confidence_breakdown": {
+      "manufacturer": 0.85,
+      "brand": 0.8,
+      "classification": 0.8491,
+      "attributes": 0.702,
+      "descriptions": 0.935,
+      "evidence": 0.5714
+    },
+    "status": "SUCCESS",
+    "stage_log": [
+      {
+        "stage": "cleaning",
+        "detail": "3 placeholder field(s) neutralised",
+        "placeholders": [
+          "E1_Brand",
+          "Unilog_Brand",
+          "DIB_Brand"
+        ]
+      },
+      {
+        "stage": "entity_resolution",
+        "detail": "supplier=Jam Industrial Supply LLC; brand=3M; manufacturer=3 M Co"
+      },
+      {
+        "stage": "product_parsing",
+        "detail": "type='Stikit Film P120' materials=[] specs=['Volume', 'Package Quantity'] via deterministic"
+      },
+      {
+        "stage": "classification",
+        "detail": "leaf=abrasive_discs confidence=0.85 (matched: stikit, disc/box); settled deterministically"
+      },
+      {
+        "stage": "manufacturer_research",
+        "detail": "manufacturer research disabled (set RESEARCH_ENABLED=true and a SEARCH_API_KEY)"
+      },
+      {
+        "stage": "attribute_extraction",
+        "detail": "3/5 slots populated"
+      },
+      {
+        "stage": "description_generation",
+        "detail": "5 fields composed"
+      },
+      {
+        "stage": "digital_assets",
+        "detail": "0 confirmed; 1 predicted but unconfirmed (not published)"
+      },
+      {
+        "stage": "validation",
+        "detail": "33/33 checks passed; 0 error(s) after 1 pass(es)"
+      }
+    ],
+    "error": null
+  },
+  {
+    "row_index": 3,
+    "raw": {},
+    "cleaned": {
+      "Mfg_Part_Num": "3MABR-7100048736",
+      "Part_Desc": "3M 775L Stikit Film P80 - Cubitron II 50 Disc/Box",
+      "E1_Brand": null,
+      "Unilog_Brand": null,
+      "DIB_Brand": null,
+      "Part_Manuf": "Jam Industrial Supply LLC (JAMIN)"
+    },
+    "placeholders": [
+      "E1_Brand",
+      "Unilog_Brand",
+      "DIB_Brand"
+    ],
+    "parsed": {
+      "mpn": "3MABR-7100048736",
+      "manufacturer_raw": "Jam Industrial Supply LLC (JAMIN)",
+      "brand_raw": "",
+      "product_type": "Stikit Film P80",
+      "category": "",
+      "series": "",
+      "model": "3MABR-7100048736",
+      "dimensions": {
+        "dim_1": "3 m"
+      },
+      "materials": [],
+      "technical_specs": {
+        "Volume": "775 L",
+        "Package Quantity": "50"
+      },
+      "features": [
+        "Cubitron II 50 Disc/Box"
+      ],
+      "segments": [
+        "3M 775L Stikit Film P80",
+        "Cubitron II 50 Disc/Box"
+      ],
+      "residual_text": "Stikit Film P80 - Cubitron II /Box",
+      "method": "deterministic",
+      "confidence": 0.77
+    },
+    "mpn": {
+      "value": "3MABR-7100048736",
+      "confidence": 1.0,
+      "band": "HIGH",
+      "method": "input_passthrough",
+      "transformation": "manufacturer part number taken from the feed",
+      "raw": "3MABR-7100048736",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "input_feed:Mfg_Part_Num",
+          "tier": "input_feed",
+          "snippet": "3MABR-7100048736",
+          "url": "",
+          "locator": "",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "manufacturer": {
+      "value": "3 M Co",
+      "confidence": 0.85,
+      "band": "HIGH",
+      "method": "brand_owner",
+      "transformation": "'3M' is owned by '3 M Co' per the brand master",
+      "raw": "Jam Industrial Supply LLC (JAMIN)",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "master_data:manufacturer",
+          "tier": "master_data",
+          "snippet": "Jam Industrial Supply LLC (JAMIN)",
+          "url": "",
+          "locator": "brand_owner",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "manufacturer_code": {
+      "value": "5293",
+      "confidence": 0.85,
+      "band": "HIGH",
+      "method": "brand_owner",
+      "transformation": "manufacturer code from master data",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "brand": {
+      "value": "3M",
+      "confidence": 0.8,
+      "band": "MEDIUM",
+      "method": "description_mention",
+      "transformation": "brand name 'stikit' found in the product description",
+      "raw": "3M 775L Stikit Film P80 - Cubitron II 50 Disc/Box",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "master_data:brand",
+          "tier": "master_data",
+          "snippet": "3M 775L Stikit Film P80 - Cubitron II 50 Disc/Box",
+          "url": "",
+          "locator": "description_mention",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "supplier": {
+      "value": "Jam Industrial Supply LLC",
+      "confidence": 0.9306,
+      "band": "HIGH",
+      "method": "code",
+      "transformation": "supplier code 'JAMIN' matched master record",
+      "raw": "Jam Industrial Supply LLC (JAMIN)",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "master_data:manufacturer",
+          "tier": "master_data",
+          "snippet": "Jam Industrial Supply LLC (JAMIN)",
+          "url": "",
+          "locator": "code",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "leaf_id": "abrasive_discs",
+    "classpath": {
+      "value": "Tools & Hardware>Power Tool Accessories>Abrasives",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "matched: stikit, disc/box",
+      "raw": "3M 775L Stikit Film P80 - Cubitron II 50 Disc/Box",
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "taxonomy:keyword_classifier",
+          "tier": "controlled_vocabulary",
+          "snippet": "3M 775L Stikit Film P80 - Cubitron II 50 Disc/Box",
+          "url": "",
+          "locator": "settled deterministically",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "dept": {
+      "value": "Tools",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "matched: stikit, disc/box",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "class": {
+      "value": "Power Tool Accessories",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "matched: stikit, disc/box",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "fine": {
+      "value": "Abrasives",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "matched: stikit, disc/box",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "product_name": {
+      "value": "Abrasive",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "product name from the taxonomy leaf",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": [
+        {
+          "source": "taxonomy:keyword_classifier",
+          "tier": "controlled_vocabulary",
+          "snippet": "3M 775L Stikit Film P80 - Cubitron II 50 Disc/Box",
+          "url": "",
+          "locator": "settled deterministically",
+          "retrieved_at": ""
+        }
+      ]
+    },
+    "unspsc": {
+      "value": "31191500",
+      "confidence": 0.8491,
+      "band": "MEDIUM",
+      "method": "keyword",
+      "transformation": "UNSPSC from the taxonomy leaf",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "classification_candidates": [
+      {
+        "leaf_id": "abrasive_discs",
+        "classpath": "Tools & Hardware>Power Tool Accessories>Abrasives",
+        "score": 13.5,
+        "matched": [
+          "stikit",
+          "disc/box"
+        ]
+      },
+      {
+        "leaf_id": "electrical_boxes",
+        "classpath": "Electrical>Boxes, Conduit & Fittings>Electrical Boxes & Covers",
+        "score": 3.0,
+        "matched": [
+          "box"
+        ]
+      }
+    ],
+    "attributes": [
+      {
+        "label": "Abrasive Type",
+        "value": "Sanding Disc",
+        "uom": null,
+        "raw": "Disc",
+        "confidence": 0.94,
+        "band": "HIGH",
+        "method": "lov_synonym",
+        "lov_compliant": true,
+        "transformation": "LOV synonym 'Disc' -> 'Sanding Disc'",
+        "evidence": [
+          {
+            "source": "input_feed:Part_Desc",
+            "tier": "controlled_vocabulary",
+            "snippet": "Disc",
+            "url": "",
+            "locator": "Abrasive Type",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      {
+        "label": "Grit",
+        "value": "80",
+        "uom": null,
+        "raw": "P80",
+        "confidence": 0.88,
+        "band": "HIGH",
+        "method": "regex",
+        "lov_compliant": null,
+        "transformation": "extracted by regex",
+        "evidence": [
+          {
+            "source": "input_feed:Part_Desc",
+            "tier": "deterministic_transform",
+            "snippet": "P80",
+            "url": "",
+            "locator": "Grit",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      {
+        "label": "Size",
+        "value": null,
+        "uom": null,
+        "raw": null,
+        "confidence": 0.0,
+        "band": "UNKNOWN",
+        "method": "not_found",
+        "lov_compliant": null,
+        "transformation": "",
+        "evidence": []
+      },
+      {
+        "label": "Quantity per Package",
+        "value": "50",
+        "uom": null,
+        "raw": "50 Disc",
+        "confidence": 0.88,
+        "band": "HIGH",
+        "method": "regex",
+        "lov_compliant": null,
+        "transformation": "extracted by regex",
+        "evidence": [
+          {
+            "source": "input_feed:Part_Desc",
+            "tier": "deterministic_transform",
+            "snippet": "50 Disc",
+            "url": "",
+            "locator": "Quantity per Package",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      {
+        "label": "Additional Information",
+        "value": null,
+        "uom": null,
+        "raw": null,
+        "confidence": 0.0,
+        "band": "UNKNOWN",
+        "method": "not_found",
+        "lov_compliant": null,
+        "transformation": "",
+        "evidence": []
+      }
+    ],
+    "descriptions": {
+      "LONG_DESC1": {
+        "value": "3M Abrasive, Sanding Disc, 80 Grit, 50 per Package",
+        "confidence": 0.935,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 3 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "3 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "SHORT_DESC": {
+        "value": "3M 3MABR-7100048736 Abrasive, Sanding Disc, 80-Grit, 50-per Package",
+        "confidence": 0.935,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 3 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "3 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "RETAIL_DESC": {
+        "value": "Abrasive, Sanding Disc, 80-Grit, 50-per Package",
+        "confidence": 0.935,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 3 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "3 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "MOBILE_DESC": {
+        "value": "3 M Co 3M, Abrasive, 3MABR-7100048736, Sanding Disc, 80 Grit, 50 per Package",
+        "confidence": 0.935,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 3 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "3 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "INVOICE_DESC": {
+        "value": "ABRASIVE SND DISC 80",
+        "confidence": 0.935,
+        "band": "HIGH",
+        "method": "template",
+        "transformation": "composed from 3 verified attributes on leaf 'abrasive_discs'",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [],
+        "evidence": [
+          {
+            "source": "derived:description_template",
+            "tier": "deterministic_transform",
+            "snippet": "3 verified attributes",
+            "url": "",
+            "locator": "abrasive_discs",
+            "retrieved_at": ""
+          }
+        ]
+      },
+      "MARKETING_DESCRIPTION": {
+        "value": null,
+        "confidence": 0.0,
+        "band": "UNKNOWN",
+        "method": "none",
+        "transformation": "",
+        "raw": null,
+        "validation": "PENDING",
+        "notes": [
+          "no manufacturer marketing copy retrieved; left blank rather than invented"
+        ],
+        "evidence": []
+      }
+    },
+    "features": [],
+    "with_clause": {
+      "value": null,
+      "confidence": 0.0,
+      "band": "UNKNOWN",
+      "method": "none",
+      "transformation": "",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "approvals": {
+      "value": null,
+      "confidence": 0.0,
+      "band": "UNKNOWN",
+      "method": "none",
+      "transformation": "",
+      "raw": null,
+      "validation": "PENDING",
+      "notes": [],
+      "evidence": []
+    },
+    "urls": {},
+    "assets": {},
+    "issues": [],
+    "review_flags": [],
+    "confidence": 0.7958,
+    "confidence_band": "MEDIUM",
+    "confidence_breakdown": {
+      "manufacturer": 0.85,
+      "brand": 0.8,
+      "classification": 0.8491,
+      "attributes": 0.702,
+      "descriptions": 0.935,
+      "evidence": 0.5714
+    },
+    "status": "SUCCESS",
+    "stage_log": [
+      {
+        "stage": "cleaning",
+        "detail": "3 placeholder field(s) neutralised",
+        "placeholders": [
+          "E1_Brand",
+          "Unilog_Brand",
+          "DIB_Brand"
+        ]
+      },
+      {
+        "stage": "entity_resolution",
+        "detail": "supplier=Jam Industrial Supply LLC; brand=3M; manufacturer=3 M Co"
+      },
+      {
+        "stage": "product_parsing",
+        "detail": "type='Stikit Film P80' materials=[] specs=['Volume', 'Package Quantity'] via deterministic"
+      },
+      {
+        "stage": "classification",
+        "detail": "leaf=abrasive_discs confidence=0.85 (matched: stikit, disc/box); settled deterministically"
+      },
+      {
+        "stage": "manufacturer_research",
+        "detail": "manufacturer research disabled (set RESEARCH_ENABLED=true and a SEARCH_API_KEY)"
+      },
+      {
+        "stage": "attribute_extraction",
+        "detail": "3/5 slots populated"
+      },
+      {
+        "stage": "description_generation",
+        "detail": "5 fields composed"
+      },
+      {
+        "stage": "digital_assets",
+        "detail": "0 confirmed; 1 predicted but unconfirmed (not published)"
+      },
+      {
+        "stage": "validation",
+        "detail": "33/33 checks passed; 0 error(s) after 1 pass(es)"
+      }
+    ],
+    "error": null
+  }
+]

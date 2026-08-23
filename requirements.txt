@@ -1,0 +1,24 @@
+# --- core (required) ---------------------------------------------------
+pandas>=2.0
+numpy>=1.24
+pydantic>=2.5
+openpyxl>=3.1            # XLSX read/write, merged-cell aware
+XlsxWriter>=3.1          # fast XLSX export
+rapidfuzz>=3.6           # entity-resolution fuzzy matching
+python-docx>=1.1         # content-guidelines .docx ingestion
+
+# --- API / server ------------------------------------------------------
+fastapi>=0.110
+uvicorn[standard]>=0.27
+python-multipart>=0.0.9  # file uploads
+httpx>=0.27              # manufacturer research client
+
+# --- optional LLM providers (the pipeline runs without either) ---------
+anthropic>=0.40 ; python_version >= "3.9"
+openai>=1.30
+
+# --- retrieval ---------------------------------------------------------
+scikit-learn>=1.3        # TF-IDF vectoriser behind RetrievalIndex (no model download)
+
+# --- development -------------------------------------------------------
+pytest>=8.0

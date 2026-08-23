@@ -1,0 +1,647 @@
+{
+  "$schema": "unilog.brand_lexicon.v1",
+  "provenance": "seed",
+  "note": "Seed lexicon of brand surface-forms used to DETECT a brand mention inside free-text descriptions. It asserts only that a token is a known trade name, never any fact about a specific product. Superseded wholesale by UniCat_Manufacturer_and_Brand_List.xlsx when that file is present in data/reference/. 'reject_after' guards suppress well-known homographs (e.g. 'Phillips Drive Bit' is a screw recess, not the Philips brand).",
+  "guards": {
+    "global_reject_after": [
+      "drive",
+      "head",
+      "recess",
+      "bit",
+      "bits",
+      "screw",
+      "screws",
+      "point",
+      "tip"
+    ]
+  },
+  "brands": [
+    {
+      "canonical": "Milwaukee",
+      "aliases": [
+        "milwaukee",
+        "milw"
+      ]
+    },
+    {
+      "canonical": "DEWALT",
+      "aliases": [
+        "dewalt",
+        "de walt"
+      ]
+    },
+    {
+      "canonical": "Makita",
+      "aliases": [
+        "makita"
+      ]
+    },
+    {
+      "canonical": "Bosch",
+      "aliases": [
+        "bosch"
+      ]
+    },
+    {
+      "canonical": "Dremel",
+      "aliases": [
+        "dremel"
+      ]
+    },
+    {
+      "canonical": "Festool",
+      "aliases": [
+        "festool"
+      ]
+    },
+    {
+      "canonical": "Kreg",
+      "aliases": [
+        "kreg"
+      ]
+    },
+    {
+      "canonical": "Senco",
+      "aliases": [
+        "senco"
+      ]
+    },
+    {
+      "canonical": "Paslode",
+      "aliases": [
+        "paslode"
+      ]
+    },
+    {
+      "canonical": "Prebena",
+      "aliases": [
+        "prebena"
+      ]
+    },
+    {
+      "canonical": "Irwin",
+      "aliases": [
+        "irwin"
+      ]
+    },
+    {
+      "canonical": "Wera",
+      "aliases": [
+        "wera"
+      ]
+    },
+    {
+      "canonical": "Vessel",
+      "aliases": [
+        "vessel"
+      ]
+    },
+    {
+      "canonical": "Malco",
+      "aliases": [
+        "malco"
+      ]
+    },
+    {
+      "canonical": "Nicholson",
+      "aliases": [
+        "nicholson"
+      ]
+    },
+    {
+      "canonical": "Marshalltown",
+      "aliases": [
+        "marshalltown",
+        "wal-board"
+      ]
+    },
+    {
+      "canonical": "Woodpeckers",
+      "aliases": [
+        "woodpeckers",
+        "bigcal"
+      ]
+    },
+    {
+      "canonical": "SawStop",
+      "aliases": [
+        "sawstop",
+        "saw stop",
+        "t-glide"
+      ]
+    },
+    {
+      "canonical": "Grizzly",
+      "aliases": [
+        "grizzly"
+      ]
+    },
+    {
+      "canonical": "Oliver",
+      "aliases": [
+        "oliver"
+      ]
+    },
+    {
+      "canonical": "Jet",
+      "aliases": [
+        "jwbs",
+        "jet bandsaw"
+      ]
+    },
+    {
+      "canonical": "Mafell",
+      "aliases": [
+        "mafell"
+      ]
+    },
+    {
+      "canonical": "King Canada",
+      "aliases": [
+        "king canada"
+      ]
+    },
+    {
+      "canonical": "Whiteside",
+      "aliases": [
+        "whiteside"
+      ]
+    },
+    {
+      "canonical": "Amana",
+      "aliases": [
+        "amana"
+      ]
+    },
+    {
+      "canonical": "CMT",
+      "aliases": [
+        "cmt"
+      ]
+    },
+    {
+      "canonical": "Freud",
+      "aliases": [
+        "freud"
+      ]
+    },
+    {
+      "canonical": "Diablo",
+      "aliases": [
+        "diablo"
+      ]
+    },
+    {
+      "canonical": "Mirka",
+      "aliases": [
+        "mirka",
+        "abranet",
+        "hiolit",
+        "iridium",
+        "deos"
+      ]
+    },
+    {
+      "canonical": "3M",
+      "aliases": [
+        "3m",
+        "cubitron",
+        "stikit"
+      ]
+    },
+    {
+      "canonical": "StealthMounts",
+      "aliases": [
+        "stealthmounts"
+      ]
+    },
+    {
+      "canonical": "Bow Products",
+      "aliases": [
+        "xtender"
+      ]
+    },
+    {
+      "canonical": "Streamlight",
+      "aliases": [
+        "streamlight"
+      ]
+    },
+    {
+      "canonical": "Police Security",
+      "aliases": [
+        "police security"
+      ]
+    },
+    {
+      "canonical": "Edge Eyewear",
+      "aliases": [
+        "edge safety",
+        "edge eyewear"
+      ]
+    },
+    {
+      "canonical": "Radians",
+      "aliases": [
+        "radians"
+      ]
+    },
+    {
+      "canonical": "Sabre",
+      "aliases": [
+        "sabre"
+      ]
+    },
+    {
+      "canonical": "Philips",
+      "aliases": [
+        "philips"
+      ],
+      "reject_after": [
+        "drive",
+        "head",
+        "bit",
+        "screw",
+        "recess"
+      ]
+    },
+    {
+      "canonical": "Satco",
+      "aliases": [
+        "satco"
+      ]
+    },
+    {
+      "canonical": "Nuvo",
+      "aliases": [
+        "nuvo"
+      ]
+    },
+    {
+      "canonical": "Kichler",
+      "aliases": [
+        "kichler"
+      ]
+    },
+    {
+      "canonical": "Lithonia Lighting",
+      "aliases": [
+        "lithonia"
+      ]
+    },
+    {
+      "canonical": "Cooper Lighting",
+      "aliases": [
+        "cooper lighting",
+        "halo"
+      ]
+    },
+    {
+      "canonical": "Feit Electric",
+      "aliases": [
+        "feit"
+      ]
+    },
+    {
+      "canonical": "GT-Lite",
+      "aliases": [
+        "gt-lite",
+        "gtlite"
+      ]
+    },
+    {
+      "canonical": "Wiz",
+      "aliases": [
+        "wiz"
+      ]
+    },
+    {
+      "canonical": "Hunter",
+      "aliases": [
+        "hunter"
+      ]
+    },
+    {
+      "canonical": "Maxsa",
+      "aliases": [
+        "maxsa"
+      ]
+    },
+    {
+      "canonical": "Leviton",
+      "aliases": [
+        "leviton"
+      ]
+    },
+    {
+      "canonical": "Southwire",
+      "aliases": [
+        "southwire"
+      ]
+    },
+    {
+      "canonical": "Lutron",
+      "aliases": [
+        "lutron"
+      ]
+    },
+    {
+      "canonical": "Square D",
+      "aliases": [
+        "square d",
+        "squared"
+      ]
+    },
+    {
+      "canonical": "Carlon",
+      "aliases": [
+        "carlon"
+      ]
+    },
+    {
+      "canonical": "Prime",
+      "aliases": [
+        "prime wire"
+      ]
+    },
+    {
+      "canonical": "Eaton",
+      "aliases": [
+        "eaton",
+        "cooper wiring"
+      ]
+    },
+    {
+      "canonical": "First Alert",
+      "aliases": [
+        "first alert"
+      ]
+    },
+    {
+      "canonical": "BRK",
+      "aliases": [
+        "brk"
+      ]
+    },
+    {
+      "canonical": "Schumacher",
+      "aliases": [
+        "schumacher"
+      ]
+    },
+    {
+      "canonical": "MillerTech",
+      "aliases": [
+        "millertech"
+      ]
+    },
+    {
+      "canonical": "TREX",
+      "aliases": [
+        "trex"
+      ]
+    },
+    {
+      "canonical": "TIMBERTECH",
+      "aliases": [
+        "timbertech"
+      ]
+    },
+    {
+      "canonical": "AZEK",
+      "aliases": [
+        "azek"
+      ]
+    },
+    {
+      "canonical": "JAMESHARDIE",
+      "aliases": [
+        "hardie",
+        "hardieplank",
+        "hardiepanel"
+      ]
+    },
+    {
+      "canonical": "LP SMARTSIDE",
+      "aliases": [
+        "smartside",
+        "smart lap",
+        "smart pan",
+        "smart vented"
+      ]
+    },
+    {
+      "canonical": "Huber",
+      "aliases": [
+        "huber",
+        "zip system",
+        "zip r"
+      ]
+    },
+    {
+      "canonical": "CertainTeed",
+      "aliases": [
+        "certainteed",
+        "easi-lite",
+        "firelite"
+      ]
+    },
+    {
+      "canonical": "Owens Corning",
+      "aliases": [
+        "owens corning",
+        "oc duration",
+        "weatherlock"
+      ]
+    },
+    {
+      "canonical": "Henry",
+      "aliases": [
+        "henry",
+        "eaveguard"
+      ]
+    },
+    {
+      "canonical": "PROVIA",
+      "aliases": [
+        "provia",
+        "ecoliteplus"
+      ]
+    },
+    {
+      "canonical": "ANDERSEN",
+      "aliases": [
+        "andersen"
+      ]
+    },
+    {
+      "canonical": "Velux",
+      "aliases": [
+        "velux"
+      ]
+    },
+    {
+      "canonical": "United Window & Door",
+      "aliases": [
+        "united window"
+      ]
+    },
+    {
+      "canonical": "DSI Westbury",
+      "aliases": [
+        "dsi westbury",
+        "westbury"
+      ]
+    },
+    {
+      "canonical": "RDI",
+      "aliases": [
+        "rdi",
+        "finyline"
+      ]
+    },
+    {
+      "canonical": "HAGER",
+      "aliases": [
+        "hager"
+      ]
+    },
+    {
+      "canonical": "AJM",
+      "aliases": [
+        "ajm"
+      ]
+    },
+    {
+      "canonical": "Emseal",
+      "aliases": [
+        "emseal"
+      ]
+    },
+    {
+      "canonical": "Protecto Wrap",
+      "aliases": [
+        "protecto wrap"
+      ]
+    },
+    {
+      "canonical": "Premier Metals",
+      "aliases": [
+        "premier rib"
+      ]
+    },
+    {
+      "canonical": "Trussway",
+      "aliases": [
+        "patriot"
+      ]
+    },
+    {
+      "canonical": "FRIGIDAIRE",
+      "aliases": [
+        "frigidaire"
+      ],
+      "symbol": "®"
+    },
+    {
+      "canonical": "Whirlpool",
+      "aliases": [
+        "whirlpool"
+      ],
+      "symbol": "®"
+    },
+    {
+      "canonical": "Maytag",
+      "aliases": [
+        "maytag"
+      ]
+    },
+    {
+      "canonical": "KitchenAid",
+      "aliases": [
+        "kitchenaid",
+        "kitchen aid"
+      ]
+    },
+    {
+      "canonical": "GE",
+      "aliases": [
+        "ge"
+      ],
+      "require_after": [
+        "dishwasher",
+        "fridge",
+        "refrigerator",
+        "freezer",
+        "microwave",
+        "washer",
+        "dryer",
+        "range",
+        "oven",
+        "cooktop",
+        "laundry",
+        "stove",
+        "wall",
+        "gas",
+        "elect",
+        "electric",
+        "21cf",
+        "microwave"
+      ]
+    },
+    {
+      "canonical": "Cafe",
+      "aliases": [
+        "cafe",
+        "café"
+      ]
+    },
+    {
+      "canonical": "LG",
+      "aliases": [
+        "lg"
+      ],
+      "require_after": [
+        "dishwasher",
+        "fridge",
+        "refrigerator",
+        "freezer",
+        "microwave",
+        "washer",
+        "dryer",
+        "range",
+        "oven",
+        "cooktop",
+        "laundry",
+        "stove",
+        "wall"
+      ]
+    },
+    {
+      "canonical": "Speed Queen",
+      "aliases": [
+        "speed queen"
+      ]
+    },
+    {
+      "canonical": "Beko",
+      "aliases": [
+        "beko"
+      ]
+    },
+    {
+      "canonical": "Element",
+      "aliases": [
+        "element fridge",
+        "element 17cf",
+        "element 21cf"
+      ]
+    },
+    {
+      "canonical": "XO",
+      "aliases": [
+        "xou"
+      ]
+    }
+  ]
+}

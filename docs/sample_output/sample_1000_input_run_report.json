@@ -1,0 +1,145 @@
+{
+  "input": "data\\raw\\sample_1000_input.csv",
+  "stats": {
+    "total": 1000,
+    "success": 533,
+    "partial": 0,
+    "needs_review": 467,
+    "failed": 0,
+    "cache_hits": 998,
+    "seconds": 5.62,
+    "stage_timings": {},
+    "throughput_per_sec": 177.84,
+    "agents": {
+      "taxonomy": {
+        "escalations": 53,
+        "llm_resolutions": 0,
+        "llm_available": false
+      }
+    },
+    "llm": {
+      "provider": "offline",
+      "available": false,
+      "model": "claude-sonnet-5",
+      "usage": {
+        "calls": 0,
+        "cache_hits": 0,
+        "failures": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_hit_rate": 0.0,
+        "seconds": 0.0
+      }
+    },
+    "retrieval": {
+      "collections": {
+        "manufacturer_brand": {
+          "name": "manufacturer_brand",
+          "documents": 167,
+          "backend": "tfidf(sklearn)",
+          "char_ngrams": true
+        },
+        "lov": {
+          "name": "lov",
+          "documents": 514,
+          "backend": "tfidf(sklearn)",
+          "char_ngrams": true
+        },
+        "fittings": {
+          "name": "fittings",
+          "documents": 0,
+          "backend": "absent"
+        },
+        "faucets": {
+          "name": "faucets",
+          "documents": 0,
+          "backend": "absent"
+        },
+        "uom": {
+          "name": "uom",
+          "documents": 68,
+          "backend": "tfidf(sklearn)",
+          "char_ngrams": true
+        },
+        "guidelines": {
+          "name": "guidelines",
+          "documents": 0,
+          "backend": "absent"
+        },
+        "examples": {
+          "name": "examples",
+          "documents": 2,
+          "backend": "tfidf(sklearn)",
+          "char_ngrams": true
+        }
+      },
+      "total_documents": 751,
+      "notes": [
+        "collection F (guidelines) empty: no content-guidelines document supplied",
+        "collection C (fittings) empty: no fittings specification workbook supplied",
+        "collection D (faucets) empty: no faucets specification workbook supplied"
+      ]
+    },
+    "lov_rescues": 0,
+    "workers": 1
+  },
+  "schema": {
+    "source": "delivery_format_labelled.csv",
+    "column_count": 252,
+    "attribute_slots": 50,
+    "item_feature_slots": 20,
+    "ref_url_slots": 5,
+    "alternate_image_slots": 4
+  },
+  "reference": {
+    "manufacturers": 75,
+    "brands": 34,
+    "leaf_nodes": 36,
+    "lov_values": 323,
+    "uom_entries": 68,
+    "fraction_entries": 63,
+    "sources": {
+      "uom": "seed:packaged abbreviation table",
+      "fractions": "computed:exact binary ladder to 1/64",
+      "manufacturer_brand": "derived:mined from 1000 working rows",
+      "brand_lexicon": "seed:brand_lexicon.json",
+      "taxonomy": "derived:taxonomy.json",
+      "guidelines": "none"
+    },
+    "warnings": [
+      "mined 75 manufacturers and 34 brands from 1000 rows",
+      "UNILOG_INTERNAL_CONTENT_GUIDELINES.docx not supplied -- description formulas are derived from the labelled delivery-format rows instead",
+      "2 suppliers classified as distributors/co-ops (brand fan-out >= 3); their Part_Manuf is not treated as the manufacturer of record"
+    ],
+    "taxonomy_provenance": "derived",
+    "uom_provenance": "seed"
+  },
+  "settings": {
+    "llm_provider": "auto",
+    "llm_model": "claude-sonnet-5",
+    "llm_enabled": true,
+    "llm_key_present": false,
+    "search_provider": "none",
+    "search_key_present": false,
+    "research_enabled": false,
+    "cache_enabled": true,
+    "max_workers": 8,
+    "review_threshold": 0.62,
+    "stages": {
+      "input_analysis": true,
+      "cleaning": true,
+      "entity_resolution": true,
+      "classification": true,
+      "attribute_extraction": true,
+      "normalization": true,
+      "manufacturer_research": true,
+      "description_generation": true,
+      "digital_assets": true,
+      "validation": true,
+      "confidence_scoring": true,
+      "review_queue": true
+    },
+    "delivery_template": "E:\\UNILOG\\data\\raw\\delivery_format_labelled.csv",
+    "reference_dir": "E:\\UNILOG\\data\\reference"
+  }
+}
