@@ -32,6 +32,48 @@ BAD_PATTERNS = [
 ]
 
 
+def ink_rect(sh):
+    """
+    Estimate where a shape's glyphs actually land, in inches.
+
+    Returns (left, top, right, bottom, label) or None when the shape has no text.
+    The estimate is deliberately conservative -- it is used to flag collisions, so
+    over-reporting is worse than under-reporting.
+    """
+    if not (sh.has_text_frame and sh.text_frame.text.strip()):
+        return None
+    try:
+        left, top = Emu(sh.left).inches, Emu(sh.top).inches
+        width, height = Emu(sh.width).inches, Emu(sh.height).inches
+    except (TypeError, ValueError):
+        return None
+
+    lines = 0.0
+    max_pt = 10.0
+    for para in sh.text_frame.paragraphs:
+        text = "".join(r.text for r in para.runs)
+        if not text.strip():
+            lines += 0.5
+            continue
+        pt = max((r.font.size.pt for r in para.runs if r.font.size), default=10.0)
+        max_pt = max(max_pt, pt)
+        # ~1.9 characters per point of width at this font size.
+        per_line = max(8, int(width * 72 / (pt * 0.52)))
+        lines += max(1, -(-len(text) // per_line))
+
+    ink_h = min(height, lines * max_pt * 1.28 / 72)
+
+    try:
+        anchor = sh.text_frame.vertical_anchor
+        middle = anchor is not None and str(anchor).startswith("MIDDLE")
+    except Exception:
+        middle = False
+    ink_top = top + (height - ink_h) / 2 if middle else top
+
+    name = " ".join(sh.text_frame.text.strip().split())[:26]
+    return (left, ink_top, left + width, ink_top + ink_h, name)
+
+
 def check(path: Path) -> int:
     prs = Presentation(str(path))
     problems: List[str] = []
@@ -47,6 +89,7 @@ def check(path: Path) -> int:
         pictures = 0
         shapes = 0
         overflow: List[str] = []
+        overlaps: List[str] = []
 
         for sh in slide.shapes:
             shapes += 1
@@ -66,6 +109,31 @@ def check(path: Path) -> int:
                 name = (sh.text_frame.text[:28].replace("\n", " ")
                         if sh.has_text_frame else str(sh.shape_type))
                 overflow.append(f"{name!r} @ L{l:.2f} T{t:.2f} R{r:.2f} B{b:.2f}")
+
+        # Text-on-text overlap — the bug class that put a panel header on top of its
+        # own rows on slide 4.
+        #
+        # Comparing declared shape rectangles gives only false positives here,
+        # because a bullets() textbox is routinely far taller than the text inside
+        # it. What matters is where the glyphs actually land, so each shape's *ink*
+        # is estimated from its line count and font size, and offset for the
+        # vertical anchor: MIDDLE-anchored text (box(), stat_row()) centres its ink,
+        # which is exactly how the slide-4 header ended up over the rows.
+        boxes = [ink_rect(sh) for sh in slide.shapes]
+        boxes = [b for b in boxes if b]
+
+        for j in range(len(boxes)):
+            for k in range(j + 1, len(boxes)):
+                al, at, ar, ab, an = boxes[j]
+                bl, bt, br, bb, bn = boxes[k]
+                ox = min(ar, br) - max(al, bl)
+                oy = min(ab, bb) - max(at, bt)
+                if ox <= 0.15 or oy <= 0.06:
+                    continue
+                area = ox * oy
+                smaller = min((ar - al) * (ab - at), (br - bl) * (bb - bt))
+                if smaller and area / smaller > 0.30:
+                    overlaps.append(f"{an!r} over {bn!r} ({ox:.2f}x{oy:.2f} in)")
 
         blob = "\n".join(texts)
         head = (texts[0].split("\n")[0][:56] if texts else "(no text)")
@@ -88,6 +156,8 @@ def check(path: Path) -> int:
 
         for o in overflow:
             problems.append(f"slide {i}: off-canvas {o}")
+        for o in overlaps:
+            problems.append(f"slide {i}: overlapping text {o}")
 
         print(f"  {i:2d}  [{status:5s}] {head:58s} shapes={shapes:3d} "
               f"pics={pictures} body={body_chars}")

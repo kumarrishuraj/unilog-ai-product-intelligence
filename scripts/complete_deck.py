@@ -202,6 +202,31 @@ def two_col(slide, top: float, left_title: str, left_items: Sequence[Any],
         bullets(slide, x, top + 0.26, 4.38, items, size=size, gap=4.0)
 
 
+def panel(slide, left: float, top: float, width: float, height: float,
+          header: str, *, line: RGBColor = RULE,
+          header_color: RGBColor = MUTED) -> float:
+    """
+    A bordered panel with its header at the TOP, returning the y where body content
+    starts.
+
+    Deliberately not box(): that helper anchors text to the MIDDLE of the shape,
+    which is correct for a diagram node but puts a panel header straight on top of
+    the rows drawn inside it.
+    """
+    frame = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(left), Inches(top),
+                                   Inches(width), Inches(height))
+    frame.fill.solid()
+    frame.fill.fore_color.rgb = WHITE
+    frame.line.color.rgb = line
+    frame.line.width = Pt(0.75)
+    frame.shadow.inherit = False
+    frame.text_frame.text = ""          # no text in the shape itself
+
+    label(slide, left + 0.16, top + 0.10, width - 0.32, header,
+          size=8, color=header_color, bold=True, caps=True)
+    return top + 0.36
+
+
 def add_picture_framed(slide, image: Path, left: float, top: float,
                        width: float, caption: str = "") -> None:
     pic = slide.shapes.add_picture(str(image), Inches(left), Inches(top),
@@ -317,39 +342,40 @@ def s_enrich(slide, f):
     top = retitle(slide, "1 · How the solution enriches minimal product information",
                   "From 6 messy columns to a validated 252-column record")
 
-    # before / after panels
-    box(slide, 0.5, top, 4.3, 1.72,
-        "INPUT  ·  what the feed gives us", fill=WHITE, line=RULE,
-        font_color=MUTED, size=8, bold=True, shape=MSO_SHAPE.RECTANGLE)
-    bullets(slide, 0.66, top + 0.26, 4.0, [
+    # Before / after panels. PANEL_H must fit the taller of the two bodies: the
+    # input side has six rows, and the OUTPUT side wraps its INVOICE_DESC line.
+    PANEL_H = 1.86
+
+    body = panel(slide, 0.5, top, 4.34, PANEL_H, "Input  ·  what the feed gives us")
+    bullets(slide, 0.68, body, 3.98, [
         ("WDTS7024RZ", 0, INK),
         ("WDTS7024RZ Dishwasher SS - Display Only", 1),
-        ("E1_Brand      -- Unbranded --", 1, HUMAN),
-        ("Unilog_Brand  -- No Unilog Brand --", 1, HUMAN),
-        ("DIB_Brand     -- No DIB Brand --", 1, HUMAN),
-        ("Part_Manuf    Appliance Dealers Cooperative", 1),
-    ], size=8.5, gap=2)
+        ("E1_Brand         -- Unbranded --", 1, HUMAN),
+        ("Unilog_Brand   -- No Unilog Brand --", 1, HUMAN),
+        ("DIB_Brand       -- No DIB Brand --", 1, HUMAN),
+        ("Part_Manuf     Appliance Dealers Cooperative", 1),
+    ], size=8.2, gap=1.5, height=PANEL_H - 0.42)
 
-    box(slide, 5.2, top, 4.3, 1.72,
-        "OUTPUT  ·  excerpt of 252 columns", fill=WHITE, line=DETERM,
-        font_color=DETERM, size=8, bold=True, shape=MSO_SHAPE.RECTANGLE)
-    bullets(slide, 5.36, top + 0.26, 4.0, [
+    body = panel(slide, 5.16, top, 4.34, PANEL_H,
+                 "Output  ·  excerpt of 252 columns",
+                 line=DETERM, header_color=DETERM)
+    bullets(slide, 5.34, body, 3.98, [
         ("Classpath → Kitchen Appliances>Built-In Dishwashers", 1, DETERM),
         ("Product Name → Dishwasher", 1, DETERM),
-        ("Material → Stainless Steel   (SS via LOV synonym)", 1, DETERM),
+        ("Material → Stainless Steel  (SS via LOV synonym)", 1, DETERM),
         ("INVOICE_DESC → DISHWASHER BLTLN SST SST 120V 10A 41DBA", 1, DETERM),
         ("BRAND_NAME → blank, flagged  (no evidence offline)", 1, HUMAN),
-    ], size=8.5, gap=2)
+    ], size=8.2, gap=1.5, height=PANEL_H - 0.42)
 
-    label(slide, 0.5, top + 1.88, 9.0, "HOW  ·  seven deterministic moves",
+    label(slide, 0.5, top + PANEL_H + 0.14, 9.0, "How  ·  seven deterministic moves",
           size=8.5, color=ACCENT, bold=True, caps=True)
-    bullets(slide, 0.5, top + 2.10, 4.4, [
+    bullets(slide, 0.5, top + PANEL_H + 0.38, 4.4, [
         "1  Detect placeholders before anything else",
         "2  Resolve entities — 6-stage cascade, margin tests",
         "3  Classify — 36 leaves, explainable keyword scoring",
         "4  Retrieve category-scoped vocabulary shortlist",
     ], size=9.5, gap=3)
-    bullets(slide, 5.12, top + 2.10, 4.4, [
+    bullets(slide, 5.16, top + PANEL_H + 0.38, 4.4, [
         "5  Extract attributes — LOV → regex → dimension chain",
         "6  Normalise — 50.25 → 50-1/4,  inches → in",
         "7  Generate copy from a verified fact sheet only",
