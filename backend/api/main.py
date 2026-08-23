@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import io
 import json
+import os
 import threading
 import time
 import uuid
@@ -34,16 +35,39 @@ settings = get_settings()
 UPLOAD_DIR = settings.data_dir / "uploads"
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
+
+def _int_env(name: str, default: int) -> int:
+    try:
+        return int(os.getenv(name, "") or default)
+    except ValueError:
+        return default
+
+
+# Deployment guards. A public demo is an open door: without these, one oversized
+# upload or one very large row count exhausts a 512 MB free-tier container, and
+# accumulated job results leak memory until the process is killed.
+MAX_UPLOAD_BYTES = _int_env("MAX_UPLOAD_MB", 10) * 1024 * 1024
+MAX_ROWS = _int_env("MAX_ROWS", 2000)
+MAX_RETAINED_JOBS = _int_env("MAX_RETAINED_JOBS", 5)
+
 app = FastAPI(
     title="Unilog Product Intelligence API",
     version="1.0.0",
     description="Evidence-grounded enrichment pipeline for industrial product data.",
 )
+# CORS. A single-service deployment (the SPA is served from this same origin) needs
+# none of this, but a split deploy -- SPA on a CDN, API here -- does. Set
+# CORS_ORIGINS to a comma-separated allow-list in production; the "*" default keeps
+# the public read-only demo usable from anywhere.
+_cors_env = os.getenv("CORS_ORIGINS", "*").strip()
+CORS_ORIGINS = ["*"] if _cors_env in ("", "*") else [
+    o.strip() for o in _cors_env.split(",") if o.strip()
+]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=False,
-    allow_methods=["*"],
+    allow_origins=CORS_ORIGINS,
+    allow_credentials=CORS_ORIGINS != ["*"],
+    allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
 )
 
@@ -100,7 +124,29 @@ class JobStore:
         job = Job(id=uuid.uuid4().hex[:12], filename=filename, total=total)
         with self._lock:
             self._jobs[job.id] = job
+            self._evict_locked()
         return job
+
+    def evict(self) -> None:
+        """Trim retained results. Safe to call from a worker thread."""
+        with self._lock:
+            self._evict_locked()
+
+    def _evict_locked(self) -> None:
+        """
+        Keep only the most recent MAX_RETAINED_JOBS results.
+
+        Each finished job holds its full RunResult -- every EnrichedProduct plus its
+        252-column row -- which is roughly 15 MB per 1,000 rows. Unbounded, a demo
+        that is exercised all afternoon will exhaust the container.
+        """
+        finished = [j for j in self._jobs.values()
+                    if j.status in ("done", "error")]
+        if len(finished) <= MAX_RETAINED_JOBS:
+            return
+        for job in sorted(finished, key=lambda j: j.started_at)[:-MAX_RETAINED_JOBS]:
+            job.result = None
+            self._jobs.pop(job.id, None)
 
     def get(self, job_id: str) -> Optional[Job]:
         return self._jobs.get(job_id)
@@ -180,6 +226,9 @@ def _run_job(job: Job, rows: List[Dict[str, Any]]) -> None:
         job.status = "error"
     finally:
         job.finished_at = time.time()
+        # Also evict here: eviction on create alone always leaves one extra, since
+        # the newest job is still running when that pass looks for finished jobs.
+        JOBS.evict()
 
 
 # ---------------------------------------------------------------------------
@@ -187,7 +236,42 @@ def _run_job(job: Job, rows: List[Dict[str, Any]]) -> None:
 # ---------------------------------------------------------------------------
 @app.get("/api/health")
 def health() -> Dict[str, Any]:
-    return {"status": "ok", "settings": settings.as_dict()}
+    """
+    Readiness probe for the platform's health check.
+
+    Reports whether the two things a request actually needs are present: the
+    delivery-format template (without it the pipeline cannot build an output row)
+    and the packaged vocabulary. Returns 200 with ``status: degraded`` rather than a
+    failure code when optional pieces are missing, so a platform health check does
+    not restart a container that is working perfectly well offline.
+    """
+    template = settings.delivery_template
+    template_ok = bool(template and Path(template).exists())
+    packs_ok = (settings.pack_dir / "taxonomy.json").exists()
+    spa_ok = _FRONTEND_DIST.exists()
+
+    ready = template_ok and packs_ok
+    return {
+        "status": "ok" if ready else "degraded",
+        "ready": ready,
+        "checks": {
+            "delivery_template": template_ok,
+            "vocabulary_packs": packs_ok,
+            "frontend_bundle": spa_ok,
+        },
+        "mode": {
+            "offline_capable": True,
+            "llm_configured": bool(settings.llm_api_key) and settings.llm_enabled,
+            "research_configured": bool(settings.search_api_key)
+            and settings.research_enabled,
+        },
+        "limits": {
+            "max_upload_mb": MAX_UPLOAD_BYTES // (1024 * 1024),
+            "max_rows": MAX_ROWS,
+            "max_retained_jobs": MAX_RETAINED_JOBS,
+        },
+        "version": app.version,
+    }
 
 
 @app.get("/api/config")
@@ -212,8 +296,13 @@ async def upload(file: UploadFile = File(...)) -> Dict[str, Any]:
     suffix = Path(file.filename or "upload.csv").suffix.lower()
     if suffix not in (".csv", ".xlsx", ".xlsm"):
         raise HTTPException(400, "only CSV and XLSX uploads are supported")
+    payload = await file.read()
+    if len(payload) > MAX_UPLOAD_BYTES:
+        raise HTTPException(
+            413, f"file is {len(payload) / 1048576:.1f} MB; this deployment accepts "
+                 f"up to {MAX_UPLOAD_BYTES // 1048576} MB")
     dest = UPLOAD_DIR / f"{uuid.uuid4().hex[:8]}{suffix}"
-    dest.write_bytes(await file.read())
+    dest.write_bytes(payload)
     try:
         rows = read_table(dest)
     except Exception as exc:
@@ -231,6 +320,8 @@ def process(upload_id: str = Query(...), limit: int = Query(0, ge=0)) -> Dict[st
     rows = read_table(path)
     if limit:
         rows = rows[:limit]
+    if len(rows) > MAX_ROWS:
+        rows = rows[:MAX_ROWS]
     job = JOBS.create(upload_id, len(rows))
     job.profile = profile_input(rows, upload_id).as_dict()
     threading.Thread(target=_run_job, args=(job, rows), daemon=True).start()
@@ -238,13 +329,13 @@ def process(upload_id: str = Query(...), limit: int = Query(0, ge=0)) -> Dict[st
 
 
 @app.post("/api/process/sample")
-def process_sample(limit: int = Query(100, ge=1, le=5000)) -> Dict[str, Any]:
+def process_sample(limit: int = Query(200, ge=1, le=5000)) -> Dict[str, Any]:
     """Convenience endpoint: enrich the bundled sample feed."""
     candidates = sorted(settings.raw_dir.glob("*input*.csv")) or \
         sorted(settings.raw_dir.glob("*.csv"))
     if not candidates:
         raise HTTPException(404, "no sample input found in data/raw")
-    rows = read_table(candidates[0])[:limit]
+    rows = read_table(candidates[0])[:min(limit, MAX_ROWS)]
     job = JOBS.create(candidates[0].name, len(rows))
     job.profile = profile_input(rows, candidates[0].name).as_dict()
     threading.Thread(target=_run_job, args=(job, rows), daemon=True).start()

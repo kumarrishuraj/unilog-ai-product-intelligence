@@ -1,0 +1,52 @@
+# Render Blueprint — one-click deploy of the whole prototype.
+#
+#   https://dashboard.render.com/blueprints  ->  New Blueprint Instance
+#   point it at this repository; Render reads this file and provisions everything.
+#
+# Single service on purpose: the SPA is served by FastAPI from the same origin, and
+# the job store is in-process memory, so the UI and API must be one instance.
+
+services:
+  - type: web
+    name: unilog-product-intelligence
+    runtime: docker
+    plan: free
+    region: oregon
+    branch: main
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
+
+    envVars:
+      # ---- offline-first: the demo runs with no keys at all ----------------
+      # Leave LLM_API_KEY and SEARCH_API_KEY unset. Every AI stage falls back to
+      # its deterministic path and the dashboard reports "LLM offline".
+      - key: LLM_ENABLED
+        value: "false"
+      - key: RESEARCH_ENABLED
+        value: "false"
+      - key: SEARCH_PROVIDER
+        value: none
+
+      # ---- deployment guards for a public demo on a 512 MB instance --------
+      - key: MAX_UPLOAD_MB
+        value: "10"
+      - key: MAX_ROWS
+        value: "1000"
+      - key: MAX_RETAINED_JOBS
+        value: "5"
+      - key: MAX_WORKERS
+        value: "1"
+
+      # ---- same-origin, so no cross-origin allow-list is needed ------------
+      - key: CORS_ORIGINS
+        value: "*"
+
+      - key: CACHE_ENABLED
+        value: "true"
+      - key: PYTHONUNBUFFERED
+        value: "1"
+
+      # ---- optional: add these in the Render dashboard, never in this file --
+      # LLM_API_KEY     -> enables the 3 guarded model call sites
+      # SEARCH_API_KEY  -> enables manufacturer research (Tavily / Serper)

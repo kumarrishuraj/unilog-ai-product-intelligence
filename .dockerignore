@@ -1,0 +1,41 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Version control / CI
+.git
+.github
+.gitignore
+.gitattributes
+
+# Python caches and local envs
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.coverage
+htmlcov/
+
+# Node — the SPA is built inside the image
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Regenerable pipeline output (the products dump alone is ~15 MB)
+data/processed/
+data/uploads/
+
+# Licensed reference workbooks are mounted at runtime, never baked in
+data/reference/*
+!data/reference/.gitkeep
+
+# Docs, deck and screenshots are not needed at runtime
+docs/
+tests/
+*.pptx
+*.md
+!README.md

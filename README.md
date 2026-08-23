@@ -227,6 +227,42 @@ is what populates `MFR URL`, the `Ref URL` family, `ITEM_FEATURES`,
 
 ---
 
+## 3.2 Deploying it
+
+Full guide: **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)**.
+
+**One service, not two.** FastAPI serves the built SPA from the same origin. That is
+deliberate: the job store is in-process memory, so the UI and the API must be the
+same instance. A serverless backend would break it outright — the status poll would
+land on a different invocation than the one holding the job.
+
+```bash
+# any Docker host
+docker build -t unilog-pi .
+docker run -p 8000:8000 -e PORT=8000 unilog-pi
+```
+
+**Render (free tier)** — the repo ships a [`render.yaml`](render.yaml) Blueprint:
+Dashboard → **New → Blueprint** → point at this repo → **Apply**. No keys needed;
+the Blueprint sets `LLM_ENABLED=false` and `RESEARCH_ENABLED=false`, and the demo
+runs entirely on the deterministic path.
+
+Verified against the production image under a 512 MB cap (matching the free tier):
+
+| | |
+|---|---|
+| Memory, idle → after 8 jobs | **147 MB → 161 MB** of 512 |
+| 400-row run inside the container | 1.0 s, 0 failures |
+| Upload > 10 MB | rejected with HTTP 413 |
+| Row request of 5,000 | capped to `MAX_ROWS` |
+| Job results retained | 5, older ones evicted |
+| `/api/health` | `{"status":"ok","ready":true}` |
+
+A split deploy (SPA on Vercel, API on Render) is supported via `VITE_API_BASE` and
+`CORS_ORIGINS` — see DEPLOYMENT.md §5 for why it is not the default.
+
+---
+
 ## 4. Reference data — read this
 
 The brief describes a reference pack (UniCat manufacturer/brand list, Unicat LOV,
