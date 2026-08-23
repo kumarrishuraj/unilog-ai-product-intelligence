@@ -44,6 +44,10 @@ SHOTS = ROOT / "docs/screenshots"
 # Marked clearly so the user can find them; nothing is invented.
 TBD = "[ TO BE FILLED BY TEAM ]"
 
+# Known, verified live URLs.
+REPO_URL = "https://github.com/kumarrishuraj/unilog-ai-product-intelligence"
+PROTOTYPE_URL = "https://unilog-product-intelligence.onrender.com"
+
 
 # ---------------------------------------------------------------------------
 # Real figures
@@ -684,22 +688,49 @@ def s_future(slide, f):
 def s_links(slide, f):
     top = retitle(slide, "Links", "Repository · demo video · working prototype")
     bullets(slide, 0.5, top, 9.0, [
-        f"GitHub public repository:   {TBD}",
+        (f"Working prototype:   {PROTOTYPE_URL}", 0, ACCENT),
+        f"GitHub public repository:   {REPO_URL}",
         f"Demo video (3 minutes):   {TBD}",
-        f"Working prototype link:   {TBD}",
-    ], size=12, gap=10)
+    ], size=11.5, gap=9)
+    label(slide, 0.5, top + 0.92, 9.0,
+          "The prototype is live and offline-first — it needs no API key. Render's free "
+          "tier sleeps after 15 minutes idle, so the first request may take ~50 s to wake it.",
+          size=8.5, color=MUTED)
 
-    label(slide, 0.5, top + 1.30, 9.0, "RUN IT LOCALLY", size=9, color=ACCENT,
+    label(slide, 0.5, top + 1.42, 9.0, "RUN IT LOCALLY", size=9, color=ACCENT,
           bold=True, caps=True)
-    box(slide, 0.5, top + 1.54, 9.0, 1.52,
-        "pip install -r requirements.txt\n"
-        "python scripts/run_pipeline.py --input data/raw/sample_1000_input.csv "
-        "--format both\n"
-        "python evaluation/benchmark.py --labelled data/raw/delivery_format_labelled.csv\n"
-        "cd frontend && npm install && npm run build && cd ..\n"
-        "uvicorn backend.api.main:app --port 8000        →  http://127.0.0.1:8000",
-        fill=WHITE, line=RULE, font_color=INK, size=9, shape=MSO_SHAPE.RECTANGLE)
-    label(slide, 0.5, top + 3.16, 9.0,
+    # A command block must read left-aligned and monospaced. box() centres its text,
+    # which is right for a diagram node and wrong for shell commands.
+    frame = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.5),
+                                   Inches(top + 1.64), Inches(9.0), Inches(1.42))
+    frame.fill.solid()
+    frame.fill.fore_color.rgb = WHITE
+    frame.line.color.rgb = RULE
+    frame.line.width = Pt(0.75)
+    frame.shadow.inherit = False
+
+    commands = [
+        "pip install -r requirements.txt",
+        "python scripts/run_pipeline.py --input data/raw/sample_1000_input.csv --format both",
+        "python evaluation/benchmark.py --labelled data/raw/delivery_format_labelled.csv",
+        "cd frontend && npm install && npm run build && cd ..",
+        "uvicorn backend.api.main:app --port 8000      →  http://127.0.0.1:8000",
+    ]
+    tb = slide.shapes.add_textbox(Inches(0.70), Inches(top + 1.76), Inches(8.6),
+                                  Inches(1.20))
+    tf = tb.text_frame
+    tf.word_wrap = True
+    tf.margin_left = tf.margin_top = 0
+    for i, cmd in enumerate(commands):
+        para = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+        para.alignment = PP_ALIGN.LEFT
+        para.space_after = Pt(2)
+        run = para.add_run()
+        run.text = cmd
+        run.font.name = "Consolas"
+        run.font.size = Pt(8.5)
+        run.font.color.rgb = INK
+    label(slide, 0.5, top + 3.22, 9.0,
           "Walk one product through all eleven stages with its evidence:  "
           "python scripts/demo.py --mpn 49-94-0013",
           size=8.5, color=MUTED)
@@ -805,8 +836,9 @@ def build(template: Path, out: Path) -> Path:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--template",
-                    default=r"E:\UNILOG\[EXT] UniHack-Protoype Template  (1).pptx")
+    # The blank UniHack template is git-ignored — it is not ours to redistribute.
+    # Keep a local copy at this path to rebuild the deck.
+    ap.add_argument("--template", default=str(ROOT / "docs" / "unihack_template.pptx"))
     ap.add_argument("--out", default=str(ROOT / "UniHack_Unilog_Product_Intelligence.pptx"))
     args = ap.parse_args()
 
